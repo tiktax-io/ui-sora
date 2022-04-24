@@ -2,19 +2,19 @@
 
 exports[`<Alert /> appearance snapshot 1`] = `
 <div
-  className="ub-b-top_1px-solid-0070AC ub-b-rgt_1px-solid-0070AC ub-b-btm_1px-solid-0070AC ub-b-lft_1px-solid-0070AC ub-pst_relative ub-ovflw-x_hidden ub-ovflw-y_hidden ub-dspl_flex ub-pb_15px ub-pl_15px ub-pr_15px ub-pt_15px ub-bg-clr_ebf8ff ub-bblr_12px ub-bbrr_12px ub-btlr_12px ub-btrr_12px ub-color_005a8a ub-box-szg_border-box"
+  className="ub-b-top_2px-solid-0070AC ub-b-rgt_2px-solid-0070AC ub-b-btm_2px-solid-0070AC ub-b-lft_2px-solid-0070AC ub-pst_relative ub-ovflw-x_hidden ub-ovflw-y_hidden ub-dspl_flex ub-pb_20px ub-pl_20px ub-pr_20px ub-pt_20px ub-bg-clr_ebf8ff ub-bblr_12px ub-bbrr_12px ub-btlr_12px ub-btrr_12px ub-color_005a8a ub-box-szg_border-box"
   role="alert"
 >
   <div
     className="ub-mr_16px ub-ml_2px ub-mt_-1px ub-dspl_flex ub-algn-itms_flex-start ub-box-szg_border-box"
   >
     <svg
-      className="css-3e9a6e ub-w_16px ub-h_16px ub-box-szg_border-box"
+      className="css-3e9a6e ub-opct_0-2 ub-w_22px ub-h_22px ub-box-szg_border-box"
       data-icon="info-sign"
-      viewBox="0 0 16 16"
+      viewBox="0 0 20 20"
     >
       <path
-        d="M8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zM7 3h2v2H7V3zm3 10H6v-1h1V7H6V6h3v6h1v1z"
+        d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zM9 4h2v2H9V4zm4 12H7v-1h2V8H8V7h3v8h2v1z"
         fillRule="evenodd"
       />
     </svg>
@@ -23,7 +23,7 @@ exports[`<Alert /> appearance snapshot 1`] = `
     className="ub-flx_1 ub-box-szg_border-box"
   >
     <h4
-      className="ub-mt_0px ub-mb_0px ub-color_inherit ub-fnt-fam_1yirpkw ub-f-wght_500 ub-fnt-sze_14px ub-ln-ht_1 ub-ltr-spc_-0-05px ub-box-szg_border-box"
+      className="ub-mt_2px ub-mb_0px ub-color_inherit ub-fnt-fam_1yirpkw ub-f-wght_700 ub-fnt-sze_14px ub-ln-ht_1 ub-ltr-spc_-0-05px ub-box-szg_border-box"
     >
       Test title
     </h4>
@@ -36,19 +36,19 @@ exports[`<Alert /> appearance snapshot 1`] = `
 
 exports[`<Alert /> basic snapshot 1`] = `
 <div
-  className="ub-b-top_1px-solid-0070AC ub-b-rgt_1px-solid-0070AC ub-b-btm_1px-solid-0070AC ub-b-lft_1px-solid-0070AC ub-pst_relative ub-ovflw-x_hidden ub-ovflw-y_hidden ub-dspl_flex ub-pb_15px ub-pl_15px ub-pr_15px ub-pt_15px ub-bg-clr_ebf8ff ub-bblr_12px ub-bbrr_12px ub-btlr_12px ub-btrr_12px ub-color_005a8a ub-box-szg_border-box"
+  className="ub-b-top_2px-solid-0070AC ub-b-rgt_2px-solid-0070AC ub-b-btm_2px-solid-0070AC ub-b-lft_2px-solid-0070AC ub-pst_relative ub-ovflw-x_hidden ub-ovflw-y_hidden ub-dspl_flex ub-pb_20px ub-pl_20px ub-pr_20px ub-pt_20px ub-bg-clr_ebf8ff ub-bblr_12px ub-bbrr_12px ub-btlr_12px ub-btrr_12px ub-color_005a8a ub-box-szg_border-box"
   role="alert"
 >
   <div
     className="ub-mr_16px ub-ml_2px ub-mt_-1px ub-dspl_flex ub-algn-itms_flex-start ub-box-szg_border-box"
   >
     <svg
-      className="css-3e9a6e ub-w_16px ub-h_16px ub-box-szg_border-box"
+      className="css-3e9a6e ub-opct_0-2 ub-w_22px ub-h_22px ub-box-szg_border-box"
       data-icon="info-sign"
-      viewBox="0 0 16 16"
+      viewBox="0 0 20 20"
     >
       <path
-        d="M8 0C3.58 0 0 3.58 0 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zM7 3h2v2H7V3zm3 10H6v-1h1V7H6V6h3v6h1v1z"
+        d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zM9 4h2v2H9V4zm4 12H7v-1h2V8H8V7h3v8h2v1z"
         fillRule="evenodd"
       />
     </svg>
@@ -57,7 +57,7 @@ exports[`<Alert /> basic snapshot 1`] = `
     className="ub-flx_1 ub-box-szg_border-box"
   >
     <h4
-      className="ub-mt_0px ub-mb_0px ub-color_inherit ub-fnt-fam_1yirpkw ub-f-wght_500 ub-fnt-sze_14px ub-ln-ht_1 ub-ltr-spc_-0-05px ub-box-szg_border-box"
+      className="ub-mt_2px ub-mb_0px ub-color_inherit ub-fnt-fam_1yirpkw ub-f-wght_700 ub-fnt-sze_14px ub-ln-ht_1 ub-ltr-spc_-0-05px ub-box-szg_border-box"
     >
       A simple general message
     </h4>
@@ -70,19 +70,19 @@ exports[`<Alert /> basic snapshot 1`] = `
 
 exports[`<Alert /> intent snapshot 1`] = `
 <div
-  className="ub-b-top_1px-solid-F45B69 ub-b-rgt_1px-solid-F45B69 ub-b-btm_1px-solid-F45B69 ub-b-lft_1px-solid-F45B69 ub-pst_relative ub-ovflw-x_hidden ub-ovflw-y_hidden ub-dspl_flex ub-pb_15px ub-pl_15px ub-pr_15px ub-pt_15px ub-bg-clr_fcd6d9 ub-bblr_12px ub-bbrr_12px ub-btlr_12px ub-btrr_12px ub-color_d10e20 ub-box-szg_border-box"
+  className="ub-b-top_2px-solid-F45B69 ub-b-rgt_2px-solid-F45B69 ub-b-btm_2px-solid-F45B69 ub-b-lft_2px-solid-F45B69 ub-pst_relative ub-ovflw-x_hidden ub-ovflw-y_hidden ub-dspl_flex ub-pb_20px ub-pl_20px ub-pr_20px ub-pt_20px ub-bg-clr_fcd6d9 ub-bblr_12px ub-bbrr_12px ub-btlr_12px ub-btrr_12px ub-color_d10e20 ub-box-szg_border-box"
   role="alert"
 >
   <div
     className="ub-mr_16px ub-ml_2px ub-mt_-1px ub-dspl_flex ub-algn-itms_flex-start ub-box-szg_border-box"
   >
     <svg
-      className="css-8qwu00 ub-w_16px ub-h_16px ub-box-szg_border-box"
+      className="css-8qwu00 ub-opct_0-2 ub-w_22px ub-h_22px ub-box-szg_border-box"
       data-icon="error"
-      viewBox="0 0 16 16"
+      viewBox="0 0 20 20"
     >
       <path
-        d="M7.99-.01c-4.42 0-8 3.58-8 8s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm1 13h-2v-2h2v2zm0-3h-2v-7h2v7z"
+        d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm1 16H9v-2h2v2zm0-3H9V4h2v9z"
         fillRule="evenodd"
       />
     </svg>
@@ -91,7 +91,7 @@ exports[`<Alert /> intent snapshot 1`] = `
     className="ub-flx_1 ub-box-szg_border-box"
   >
     <h4
-      className="ub-mt_0px ub-mb_0px ub-color_inherit ub-fnt-fam_1yirpkw ub-f-wght_500 ub-fnt-sze_14px ub-ln-ht_1 ub-ltr-spc_-0-05px ub-box-szg_border-box"
+      className="ub-mt_2px ub-mb_0px ub-color_inherit ub-fnt-fam_1yirpkw ub-f-wght_700 ub-fnt-sze_14px ub-ln-ht_1 ub-ltr-spc_-0-05px ub-box-szg_border-box"
     >
       Test title
     </h4>

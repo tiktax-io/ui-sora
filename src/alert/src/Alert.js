@@ -15,8 +15,7 @@ const internalStyles = {
   position: 'relative',
   overflow: 'hidden',
   display: 'flex',
-  // 15 instead of 16 in order to maintain height with 1px border
-  padding: '15px'
+  padding: '20px'
 }
 
 const Alert = memo(
@@ -45,7 +44,7 @@ const Alert = memo(
       <Pane ref={ref} className={cx(className, themedClassName)} role="alert" {...styleProps} {...restProps}>
         {hasIcon && (
           <Pane marginRight={16} marginLeft={2} marginTop={-1} display="flex" alignItems="flex-start">
-            {getIconForIntent(intentToken, { size: 16 })}
+            {getIconForIntent(intentToken, { size: 22, opacity: 0.2 })}
           </Pane>
         )}
         <Pane flex={1}>
@@ -53,9 +52,9 @@ const Alert = memo(
             <Heading
               is="h4"
               size={400}
-              marginTop={0}
+              marginTop={2}
               marginBottom={0}
-              fontWeight={500}
+              fontWeight={700}
               lineHeight={1}
               // Get this from the theme / props on the Alert
               color="inherit"
