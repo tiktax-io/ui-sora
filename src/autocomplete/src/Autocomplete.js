@@ -8,6 +8,7 @@ import { Pane } from '../../layers'
 import { Popover } from '../../popover'
 import { Text } from '../../typography'
 import AutocompleteItem from './AutocompleteItem'
+import colors from '../../themes/default/tokens/colors'
 
 const fuzzyFilter = itemToString => {
   if (itemToString) {
@@ -54,10 +55,10 @@ const AutocompleteItems = ({
   const menuProps = getMenuProps()
 
   return (
-    <Pane width={width} {...menuProps}>
+    <Pane width={width} {...menuProps} borderTop={`4px solid ${colors.selected}`}>
       {title && (
-        <Pane padding={8} borderBottom="muted">
-          <Text size={300} textTransform="uppercase">
+        <Pane padding={14} borderBottom="muted">
+          <Text size={400} fontWeight={700} /* textTransform="uppercase" */>
             {title}
           </Text>
         </Pane>
@@ -100,7 +101,7 @@ const Autocomplete = memo(
   forwardRef(function Autocomplete(props, ref) {
     const {
       children,
-      itemSize = 32,
+      itemSize = 40,
       position,
       renderItem = autocompleteItemRenderer,
       isFilterDisabled = false,

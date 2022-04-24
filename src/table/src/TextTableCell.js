@@ -16,7 +16,7 @@ const TextTableCell = memo(
     return (
       <TableCell ref={ref} {...rest}>
         <Text
-          size={300}
+          size={400}
           flex="1"
           title={typeof children === 'string' ? children : undefined}
           {...ellipsis}
