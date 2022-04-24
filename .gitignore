@@ -1,0 +1,15 @@
+*.log
+node_modules
+.DS_Store
+coverage
+/commonjs/
+/esm/
+/umd/
+/.out/
+.cache
+/npm-shrinkwrap.json
+/package-lock.json
+/.idea/
+/storybook-static/
+.eslintcache
+notes

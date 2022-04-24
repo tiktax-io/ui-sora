@@ -1,0 +1,7 @@
+docs/**/*.tsx
+docs/**/*.ts
+docs/**/*.js
+/**/*.js
+/**/*.jsx
+/**/*.json
+/**/*.snap
