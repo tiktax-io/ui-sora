@@ -3199,6 +3199,7 @@ export type IconComponent = React.ForwardRefExoticComponent<
   React.PropsWithoutRef<IconProps> & React.RefAttributes<SVGElement>
 >
 export declare const AddIcon: IconComponent
+export declare const AddClipIcon: IconComponent
 export declare const AddColumnLeftIcon: IconComponent
 export declare const AddColumnRightIcon: IconComponent
 export declare const AddLocationIcon: IconComponent
@@ -3264,6 +3265,7 @@ export declare const CaretDownIcon: IconComponent
 export declare const CaretLeftIcon: IconComponent
 export declare const CaretRightIcon: IconComponent
 export declare const CaretUpIcon: IconComponent
+export declare const CargoShipIcon: IconComponent
 export declare const CellTowerIcon: IconComponent
 export declare const ChangesIcon: IconComponent
 export declare const ChartIcon: IconComponent
@@ -3281,6 +3283,7 @@ export declare const CircleArrowRightIcon: IconComponent
 export declare const CircleArrowUpIcon: IconComponent
 export declare const CitationIcon: IconComponent
 export declare const CleanIcon: IconComponent
+export declare const ClipIcon: IconComponent
 export declare const ClipboardIcon: IconComponent
 export declare const CloudIcon: IconComponent
 export declare const CloudDownloadIcon: IconComponent
@@ -3586,6 +3589,7 @@ export declare const PulseIcon: IconComponent
 export declare const RainIcon: IconComponent
 export declare const RandomIcon: IconComponent
 export declare const RecordIcon: IconComponent
+export declare const RectangleIcon: IconComponent
 export declare const RedoIcon: IconComponent
 export declare const RefreshIcon: IconComponent
 export declare const RegressionChartIcon: IconComponent
@@ -3630,6 +3634,7 @@ export declare const ShapesIcon: IconComponent
 export declare const ShareIcon: IconComponent
 export declare const SharedFilterIcon: IconComponent
 export declare const ShieldIcon: IconComponent
+export declare const ShipIcon: IconComponent
 export declare const ShopIcon: IconComponent
 export declare const ShoppingCartIcon: IconComponent
 export declare const SignalSearchIcon: IconComponent
@@ -3668,6 +3673,7 @@ export declare const SwitchIcon: IconComponent
 export declare const SymbolCircleIcon: IconComponent
 export declare const SymbolCrossIcon: IconComponent
 export declare const SymbolDiamondIcon: IconComponent
+export declare const SymbolRectangleIcon: IconComponent
 export declare const SymbolSquareIcon: IconComponent
 export declare const SymbolTriangleDownIcon: IconComponent
 export declare const SymbolTriangleUpIcon: IconComponent
@@ -3675,6 +3681,7 @@ export declare const SyringeIcon: IconComponent
 export declare const TagIcon: IconComponent
 export declare const TakeActionIcon: IconComponent
 export declare const TankIcon: IconComponent
+export declare const TargetIcon: IconComponent
 export declare const TaxiIcon: IconComponent
 export declare const TemperatureIcon: IconComponent
 export declare const TextHighlightIcon: IconComponent
