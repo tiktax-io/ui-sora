@@ -6,18 +6,18 @@ const baseStyle = {
   transition: 'box-shadow 80ms ease-in-out',
 
   _focus: {
-    boxShadow: 'shadows.focusRing'
+    boxShadow: 'shadows.focusRing',
   },
 
   _hover: {
-    boxShadow: 'shadows.focusRing'
+    boxShadow: 'shadows.focusRing',
   },
 
   _disabled: {
     boxShadow: 'none',
     // cursor: 'not-allowed',
-    pointerEvents: 'none'
-  }
+    pointerEvents: 'none',
+  },
 }
 
 const colorKeyForAppearanceOrIntent = (appearance, intent) => {
@@ -35,7 +35,7 @@ const colorKeyForAppearanceOrIntent = (appearance, intent) => {
   }
 }
 
-const colorKeyForIntent = intent => {
+const colorKeyForIntent = (intent) => {
   if (intent === 'danger') {
     return `red500`
   } else if (intent === 'success') {
@@ -69,18 +69,18 @@ const getPrimaryButtonAppearance = (appearance, intent, textColor, theme) => {
     },
     _disabled: {
       backgroundColor: `colors.${color}100`,
-      borderColor: `colors.${color}100`
+      borderColor: `colors.${color}100`,
     },
     _focus: {
       backgroundColor: `colors.${color}500`,
       boxShadow: 'rgb(0 112 172 / 12%) 0px 8px 16px 0px', // 'shadows.focusRing'
-      borderColor: `colors.${color}500`
+      borderColor: `colors.${color}500`,
     },
     _active: {
       backgroundColor: `colors.${color}700`,
       borderColor: `colors.${color}700`,
-      boxShadow: 'rgb(0 112 172 / 12%) 0px 8px 16px 0px' // 'shadows.focusRing'
-    }
+      boxShadow: 'rgb(0 112 172 / 12%) 0px 8px 16px 0px', // 'shadows.focusRing'
+    },
   }
 }
 
@@ -88,22 +88,23 @@ const appearances = {
   primary: (theme, { appearance, color, intent }) => getPrimaryButtonAppearance(appearance, intent, color, theme),
   default: {
     backgroundColor: 'white',
-    border: (theme, props) => `1px solid ${theme.colors[borderColorForIntent(props.intent)]}`,
+    boxShadow: '0px 4px 10px 3px rgba(1, 167, 255, 0.25)',
+    // border: (theme, props) => `1px solid ${theme.colors[borderColorForIntent(props.intent)]}`,
     color: (theme, props) => props.color || theme.colors[colorKeyForIntent(props.intent)],
 
     _disabled: {
       color: 'colors.gray500',
-      borderColor: 'colors.gray300'
+      borderColor: 'colors.gray300',
     },
 
     _hover: {
       border: (theme, props) => `1px solid ${theme.colors[borderColorForIntent(props.intent, true)]}`,
-      backgroundColor: 'colors.gray50'
+      backgroundColor: 'colors.gray50',
     },
 
     _active: {
-      backgroundColor: 'colors.gray100'
-    }
+      backgroundColor: 'colors.gray100',
+    },
   },
   minimal: {
     backgroundColor: 'transparent',
@@ -111,18 +112,18 @@ const appearances = {
 
     _disabled: {
       color: 'colors.gray500',
-      opacity: 0.6
+      opacity: 0.6,
     },
 
     _hover: {
-      backgroundColor: 'colors.gray100'
+      backgroundColor: 'colors.gray100',
     },
 
     _active: {
-      backgroundColor: 'colors.gray200'
-    }
+      backgroundColor: 'colors.gray200',
+    },
   },
-  destructive: getPrimaryButtonAppearance('destructive')
+  destructive: getPrimaryButtonAppearance('destructive'),
 }
 
 const sizes = {
@@ -132,7 +133,7 @@ const sizes = {
     fontSize: 'fontSizes.2',
     lineHeight: '24px',
     paddingLeft: 16,
-    paddingRight: 16
+    paddingRight: 16,
   },
   medium: {
     height: 40,
@@ -140,7 +141,7 @@ const sizes = {
     fontSize: 'fontSizes.2',
     lineHeight: '32px',
     paddingLeft: 20,
-    paddingRight: 20
+    paddingRight: 20,
   },
   large: {
     height: 48,
@@ -148,12 +149,12 @@ const sizes = {
     fontSize: 'fontSizes.3',
     lineHeight: '48px',
     paddingLeft: 24,
-    paddingRight: 24
-  }
+    paddingRight: 24,
+  },
 }
 
 export default {
   baseStyle,
   appearances,
-  sizes
+  sizes,
 }

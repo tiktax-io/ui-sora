@@ -31,7 +31,7 @@
     "test:watch": "yarn run test -- --watch",
     "lint": "eslint './src/**/*'",
     "prepublishOnly": "rm -rf esm commonjs umd && yarn build",
-    "dev": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006 ",
+    "dev": "start-storybook -p 6006 ",
     "create-package": "./tools/create-package.js",
     "create-package:components": "./tools/create-package-components.js",
     "generate-icons": "./tools/generate-icons.js",
@@ -45,8 +45,8 @@
     "release": "np",
     "deploy-docs": "cd docs && yarn install && yarn deploy",
     "postpublish": "branch=$(git rev-parse --symbolic-full-name --abbrev-ref HEAD); if [[ $branch == \"master\" ]]; then yarn deploy-docs; else echo \"not on main branch, skipping docs deploy\"; fi;",
-    "storybook": "NODE_OPTIONS=--openssl-legacy-provider start-storybook -p 6006",
-    "chromatic": "NODE_OPTIONS=--openssl-legacy-provider npx chromatic --project-token=7b27b59f8d10 --force-rebuild"
+    "storybook": "start-storybook -p 6006",
+    "chromatic": "npx chromatic --project-token=mytokenhere --force-rebuild"
   },
   "engines": {
     "node": ">=12"
@@ -74,9 +74,9 @@
     "ui-box": "^5.0.0"
   },
   "peerDependencies": {
-    "react": "^16.8.0 || ^17.0.0",
-    "react-dom": "^16.8.0 || ^17.0.0",
-    "react-is": "^16.8.0 || ^17.0.0"
+    "react": "^18.1.0 || ^17.0.0",
+    "react-dom": "^18.1.0 || ^17.0.0",
+    "react-is": "^18.1.0 || ^17.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
