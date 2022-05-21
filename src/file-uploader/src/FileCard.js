@@ -19,7 +19,7 @@ import isImage from './utils/is-image'
 const imageSize = majorScale(5)
 const styleModifiers = {}
 const pseudoSelectors = {
-  _invalid: `&[aria-invalid='true']`
+  _invalid: `&[aria-invalid='true']`,
 }
 const internalStyles = {}
 
@@ -91,7 +91,7 @@ const FileCard = memo(
           </Box>
         </Box>
         {hasValue(validationMessage) && (
-          <Paragraph color={colors.red500} size="small">
+          <Paragraph color={colors.red500} size={300}>
             {validationMessage}
           </Paragraph>
         )}
@@ -141,7 +141,7 @@ FileCard.propTypes = {
   /**
    * Message to display underneath the card
    */
-  validationMessage: PropTypes.string
+  validationMessage: PropTypes.string,
 }
 
 export default FileCard

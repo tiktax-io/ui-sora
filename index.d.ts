@@ -925,10 +925,13 @@ export interface BadgeOwnProps extends StrongOwnProps {
    * The color used for the badge. When the value is `automatic`, use the hash function to determine the color.
    */
   color?: 'automatic' | 'neutral' | 'blue' | 'red' | 'orange' | 'yellow' | 'green' | 'teal' | 'purple'
+
+  hasCloseButton?: boolean
   /**
    * Whether or not to apply hover/focus/active styles.
    */
-  isInteractive?: boolean
+  isInteractive?: boolean,
+  onRemove?: () => void
 }
 
 export type BadgeProps = PolymorphicBoxProps<'strong', BadgeOwnProps>

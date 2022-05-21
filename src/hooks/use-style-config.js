@@ -117,19 +117,23 @@ function useGlamorAndBox(styles, pseudoSelectors) {
 
     return {
       className: classNameRef.current,
-      ...matchedProps
+      ...matchedProps,
     }
   }, [styles, pseudoSelectors])
 }
 
-/**
- * Takes a styleConfig object and outputs a `className` and `boxProps` that can be spread on a Box component
+/******************************************************************************
+ * Takes a styleConfig object and outputs a `className` and `boxProps` that can
+ * be spread on a Box component
  * @param {string} componentKey the name of the component in the theme
- * @param {StyleModifiers} props props that modify the resulting visual style (e.g. `size` or `appearance`)
- * @param {PseudoSelectors} pseudoSelectors mapping for the component between states and actual pseudo selectors
- * @param {GlamorAndBoxStyle} [internalStyles] additional styles that are specified internally, separate from the visual styles
+ * @param {StyleModifiers} props props that modify the resulting visual style
+ * (e.g. `size` or `appearance`)
+ * @param {PseudoSelectors} pseudoSelectors mapping for the component between
+ * states and actual pseudo selectors
+ * @param {GlamorAndBoxStyle} [internalStyles] additional styles that are
+ * specified internally, separate from the visual styles
  * @returns {{ className: string; boxProps: import('ui-box').EnhancerProps }}
- */
+ *****************************************************************************/
 export function useStyleConfig(componentKey, props, pseudoSelectors, internalStyles) {
   const theme = useTheme()
 
@@ -142,6 +146,7 @@ export function useStyleConfig(componentKey, props, pseudoSelectors, internalSty
   // Resolve theme token strings found throughout the style object
   const styles = useMemo(() => resolveThemeTokens(theme, mergedStyles), [theme, mergedStyles])
 
-  // Finally, split up the styles based which ones Box supports and the rest construct a glamor className
+  // Finally, split up the styles based which ones Box supports and the rest
+  // construct a glamor className
   return useGlamorAndBox(styles, pseudoSelectors)
 }
