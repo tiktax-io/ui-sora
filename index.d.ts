@@ -3143,8 +3143,9 @@ export const toaster: {
 }
 
 export interface OverlayProps {
-  children: React.ReactNode | ((props: { state: TransitionStatus; close: () => void }) => JSX.Element)
-
+  children: React.ReactNode |
+    ((props: { state: TransitionStatus; close: () => void }) => JSX.Element) |
+    Element
   isShown?: boolean
   containerProps?: BoxProps<'div'>
   preventBodyScrolling?: boolean
