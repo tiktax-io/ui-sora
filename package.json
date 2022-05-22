@@ -1,6 +1,6 @@
 {
   "name": "ui-sora",
-  "version": "1.4.0",
+  "version": "1.6.0",
   "description": "React UI Kit by tiktax.io",
   "contributors": [
     "Toni Sánchez (https://tonisanchez.dev)"
@@ -29,7 +29,7 @@
     "deploy-chromatic": "npx chromatic --project-token=8edc64b0c589",
     "test": "yarn lint && yarn tsd && yarn jest",
     "test:watch": "yarn run test -- --watch",
-    "lint": "eslint './src/**/*'",
+    "lint": "eslint --fix './src/**/*'",
     "prepublishOnly": "rm -rf esm commonjs umd && yarn build",
     "dev": "start-storybook -p 6006 ",
     "create-package": "./tools/create-package.js",

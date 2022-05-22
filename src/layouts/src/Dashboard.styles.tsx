@@ -1,6 +1,7 @@
+import { Styles } from 'react-jss'
 import { BREAKPOINTS } from '../../_styles'
 
-const styles = {
+const styles: Styles = {
   back: {
     height: '100%',
     left: 0,

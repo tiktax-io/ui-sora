@@ -63,7 +63,7 @@ const Dashboard_styles_1 = __importDefault(require('./Dashboard.styles'))
 const navbar_1 = require('../../navbar')
 /******************************************************************************
  * A layout wrapper in the form of a Dashboard. A left fixed div where
- * navigation elements can be rendered. On mobile hamburguer menu will render
+ * navigation elements can be rendered. On mobile hamburger menu will render
  * the side div. On narrow screens the side div has the enough width to render
  * icons instead of full nav tabs.
  * @param {DashboardProps} props
@@ -80,16 +80,21 @@ const Dashboard = (0, react_1.memo)(
       { handleShowSidebar: () => setShowSideBar(!showSidebar), behaviour: 'sticky' },
       props.navbarProps
     )
-    return (
-      <div className={classes.back} ref={ref} {...restProps}>
-        <navbar_1.Navbar {...navbarProps} />
-        {showSidebar && (
-          <>
-            <aside className={classes.leftSide}>{props.sidebar}</aside>
-          </>
-        )}
-        <main className={classes.rightSide}>{props.children}</main>
-      </div>
+    const leftSideProps = {
+      'data-testid': 'dashboard-leftside',
+      className: classes.leftSide,
+    }
+    return react_1.default.createElement(
+      'div',
+      Object.assign({ className: classes.back, ref: ref }, restProps),
+      react_1.default.createElement(navbar_1.Navbar, Object.assign({}, navbarProps)),
+      showSidebar &&
+        react_1.default.createElement(
+          react_1.default.Fragment,
+          null,
+          react_1.default.createElement('aside', Object.assign({}, leftSideProps), props.sidebar)
+        ),
+      react_1.default.createElement('main', { className: classes.rightSide }, props.children)
     )
   })
 )

@@ -53,7 +53,7 @@ const buttons_1 = require('../../buttons')
 const icons_1 = require('../../icons')
 /******************************************************************************
  * A layout wrapper in the form of a Dashboard. A left fixed div where
- * navigation elements can be rendered. On mobile hamburguer menu will render
+ * navigation elements can be rendered. On mobile hamburger menu will render
  * the side div. On narrow screens the side div has the enough width to render
  * icons instead of full nav tabs.
  * @param {unknown} props
@@ -68,16 +68,19 @@ const Navbar = (0, react_1.memo)(
     const iconButtonProps = {
       appearance: 'minimal',
       border: 'none',
+      'data-testid': 'navbar-hamburger-menu',
       icon: icons_1.MenuIcon,
       height: 40,
-      onClick: () => props.handleShowSidebar(),
+      onClick: () => (props.handleShowSidebar ? props.handleShowSidebar() : null),
     }
-    return (
-      <div className={classes.navbar} ref={ref}>
-        <div className={classes.navbarContainer}>
-          {!props.hideToggle && <buttons_1.IconButton {...iconButtonProps} />}
-        </div>
-      </div>
+    return react_1.default.createElement(
+      'div',
+      { className: classes.navbar, ref: ref },
+      react_1.default.createElement(
+        'div',
+        { className: classes.navbarContainer },
+        !props.hideToggle && react_1.default.createElement(buttons_1.IconButton, Object.assign({}, iconButtonProps))
+      )
     )
   })
 )

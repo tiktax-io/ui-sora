@@ -8,7 +8,7 @@ import { IconButtonProps, NavbarProps } from '../../_types'
 
 /******************************************************************************
  * A layout wrapper in the form of a Dashboard. A left fixed div where
- * navigation elements can be rendered. On mobile hamburguer menu will render
+ * navigation elements can be rendered. On mobile hamburger menu will render
  * the side div. On narrow screens the side div has the enough width to render
  * icons instead of full nav tabs.
  * @param {unknown} props
@@ -23,9 +23,10 @@ const Navbar = memo(
     const iconButtonProps: IconButtonProps = {
       appearance: 'minimal',
       border: 'none',
+      'data-testid': 'navbar-hamburger-menu',
       icon: MenuIcon,
       height: 40,
-      onClick: () => props.handleShowSidebar(),
+      onClick: () => (props.handleShowSidebar ? props.handleShowSidebar() : null),
     }
 
     return (

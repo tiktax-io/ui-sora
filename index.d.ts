@@ -1657,6 +1657,10 @@ export interface IconButtonOwnProps extends ButtonOwnProps {
    * Class name passed to the button.
    */
   className?: string
+  /******************************************************************************
+   * Used to query by id on tests
+   *****************************************************************************/
+  'data-testid'?: string
 }
 
 export type IconButtonProps = PolymorphicBoxProps<'button', IconButtonOwnProps>
