@@ -2,6 +2,7 @@ import babel from '@rollup/plugin-babel'
 import commonjs from '@rollup/plugin-commonjs'
 import resolve from '@rollup/plugin-node-resolve'
 import replace from '@rollup/plugin-replace'
+import typescript from '@rollup/plugin-typescript';
 import { terser } from 'rollup-plugin-terser'
 import pkg from './package.json'
 
@@ -48,7 +49,8 @@ export default [
       babel({
         exclude: 'node_modules/**',
         babelHelpers: 'runtime'
-      })
+      }),
+      typescript({ tsconfig: "./tsconfig.json" })
     ]
   },
   // UMD Production
@@ -78,6 +80,7 @@ export default [
         exclude: 'node_modules/**',
         babelHelpers: 'runtime'
       }),
+      typescript({ tsconfig: "./tsconfig.json" }),
       terser()
     ]
   }
