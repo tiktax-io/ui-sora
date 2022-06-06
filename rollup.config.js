@@ -1,87 +1,23 @@
-import babel from '@rollup/plugin-babel'
-import commonjs from '@rollup/plugin-commonjs'
-import resolve from '@rollup/plugin-node-resolve'
-import replace from '@rollup/plugin-replace'
-import typescript from '@rollup/plugin-typescript';
-import { terser } from 'rollup-plugin-terser'
-import pkg from './package.json'
-
-// Use peerDependencies as rollup external
-// https://rollupjs.org/guide/en/#peer-dependencies
-const { peerDependencies } = pkg
-const external = Object.keys(peerDependencies)
-
-// Ignore SSR imports in UMD, replace with empty functions
-const ignoreSSR = {
-  ssr: './ssr/index.umd.js'
-}
-
-const globals = {
-  react: 'React',
-  'react-dom': 'ReactDOM',
-  'react-is': 'ReactIs'
-}
+import typescript from "rollup-plugin-typescript2";
+import pkg from "./package.json";
 
 export default [
-  // UMD Development
   {
-    input: 'src/index.js',
-    external,
-    output: {
-      file: 'umd/sora.js',
-      format: 'umd',
-      name: 'SoraUI',
-      indent: false,
-      globals
-    },
+    input: "src/index.ts",
+    external: Object.keys(pkg.peerDependencies || {}),
     plugins: [
-      replace({
-        preventAssignment: true,
-        values: {
-          'process.env.NODE_ENV': JSON.stringify('development'),
-          ...ignoreSSR
-        }
-      }),
-      resolve(),
-      commonjs({
-        include: 'node_modules/**'
-      }),
-      babel({
-        exclude: 'node_modules/**',
-        babelHelpers: 'runtime'
-      }),
-      typescript({ tsconfig: "./tsconfig.json" })
-    ]
-  },
-  // UMD Production
-  {
-    input: 'src/index.js',
-    external,
-    output: {
-      file: 'umd/sora.min.js',
-      format: 'umd',
-      name: 'SoraUI',
-      indent: false,
-      globals
-    },
-    plugins: [
-      replace({
-        preventAssignment: true,
-        values: {
-          'process.env.NODE_ENV': JSON.stringify('production'),
-          ...ignoreSSR
-        }
-      }),
-      resolve(),
-      commonjs({
-        include: 'node_modules/**'
-      }),
-      babel({
-        exclude: 'node_modules/**',
-        babelHelpers: 'runtime'
-      }),
-      typescript({ tsconfig: "./tsconfig.json" }),
-      terser()
+      typescript({
+        typescript: require("typescript")
+      })
+    ],
+    output: [
+      { file: pkg.main, format: "cjs" },
+      { file: pkg.module, format: "esm" },
+      {
+        file: "es/src/reactComponentLib/index.js",
+        format: "es",
+        banner: "/* eslint-disable */"
+      }
     ]
   }
 ]

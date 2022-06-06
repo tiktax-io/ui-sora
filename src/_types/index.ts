@@ -1,23 +1,27 @@
-import { ReactChild } from 'react'
+import { AriaAttributes, ButtonHTMLAttributes, DetailedHTMLProps, DOMAttributes } from 'react'
+import { CSSinJS } from './global'
 
-export type NavbarProps = {
-  behaviour?: 'sticky' | 'scrollup' | 'scrollable'
-  children?: ReactChild
-  handleShowSidebar?: () => void
-  hideToggle?: boolean
+type RGB = `rgb(${number}, ${number}, ${number})`
+type RGBA = `rgba(${number}, ${number}, ${number}, ${number})`
+type HEX = `#${string}`
+
+export type Appearance = 'default' | 'primary' | 'success' | 'danger'
+export type Color = RGB | RGBA | HEX
+export interface Theme {
+  Button?: {
+    default_container?: CSSinJS
+    primary_container?: CSSinJS
+    success_container?: CSSinJS
+    danger_container?: CSSinJS
+  }
 }
 
-export type DashboardProps = {
-  children: ReactChild
-  navbarProps?: NavbarProps
-  sidebar?: ReactChild
+export interface CustomHTMLAttributes {
+  button?: DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>
 }
 
-export type IconButtonProps = {
-  appearance?: string // 'minimal',
-  border?: string // 'none',
-  'data-testid'?: string
-  icon: unknown // MenuIcon,
-  height: 40
-  onClick: () => void
+declare namespace React {
+  interface HTMLAttributes<T> extends AriaAttributes, DOMAttributes<T> {
+    'data-testid': string
+  }
 }

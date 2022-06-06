@@ -1,7 +1,5 @@
-docs/**/*.tsx
-docs/**/*.ts
-docs/**/*.js
-/**/*.js
-/**/*.jsx
-/**/*.json
-/**/*.snap
+.eslintrc.js
+package.json
+tsconfig.json
+jest.config.js
+rollup.config.js
