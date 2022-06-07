@@ -14,6 +14,10 @@ export interface Theme {
     success_container?: CSSinJS
     danger_container?: CSSinJS
   }
+  Navbar?: {
+    container?: CSSinJS
+    content?: CSSinJS
+  }
 }
 
 export interface CustomHTMLAttributes {
@@ -24,4 +28,9 @@ declare namespace React {
   interface HTMLAttributes<T> extends AriaAttributes, DOMAttributes<T> {
     'data-testid': string
   }
+}
+
+type LogoSize = 'sm' | 'm' | 'l' | 'xl'
+export interface LogoProps {
+  size?: LogoSize
 }

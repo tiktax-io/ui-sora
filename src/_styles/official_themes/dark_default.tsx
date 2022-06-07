@@ -1,3 +1,4 @@
+import { Theme } from '../../_types'
 import { hexToRGB, shadeColor } from '../../_utils/colors'
 import { black, danger, success } from '../colors'
 import { inputGlobalStyles } from '../inputs'
@@ -7,7 +8,7 @@ const successShadow = hexToRGB(success, 0.25)
 const dangerShadow = hexToRGB(danger, 0.25)
 const blackTint = hexToRGB(black, 1.05)
 
-const darkDefault = {
+const darkDefault: Theme = {
   Button: {
     default_container: {
       ...inputGlobalStyles.container,
@@ -77,6 +78,29 @@ const darkDefault = {
         color: danger  
       }  
     }
+  },
+  Navbar: {
+    container: {
+      alignItems: 'center',
+      background: black,
+      boxShadow: `0px 4px 4px 0px ${hexToRGB(black, 0.1)}`,
+      display: 'flex',
+      gap: 40,
+      height: '65px',
+      justifyContent: 'center',
+      left: 0,
+      position: 'absolute',
+      top: 0,
+      width: '100%'
+    },
+    content: {
+      alignItems: 'center',
+      display: 'flex',
+      gap: 40,
+      height: '100%',
+      maxWidth: '1460px',
+      width: '95%'
+    }  
   }
 }
 
