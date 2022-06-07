@@ -1,4 +1,4 @@
-Live demo: https://6293f7330cfe3b004a1c050a-yroiyyamtm.chromatic.com/
+Live demo: https://6264addc81766b004a25fcf6-bzjbnsxnpa.chromatic.com/
 
 # ui-sora by tiktax.io
 

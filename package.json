@@ -1,7 +1,7 @@
 {
   "name": "ui-sora",
   "description": "React UI Kit by tiktax.io",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "repository": "https://github.com/TonySapa/ui-library-boilerplate.git",
@@ -24,6 +24,7 @@
     "@storybook/addon-essentials": "^6.5.7",
     "@storybook/addon-interactions": "^6.5.7",
     "@storybook/addon-links": "^6.5.7",
+    "@storybook/addon-viewport": "^6.5.7",
     "@storybook/builder-webpack4": "^6.5.7",
     "@storybook/manager-webpack4": "^6.5.7",
     "@storybook/react": "^6.5.7",

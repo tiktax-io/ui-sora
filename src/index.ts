@@ -1,5 +1,6 @@
 // Components
 export { default as Button } from './button/Button'
+export { default as Navbar } from './navbar/Navbar'
 
 // Other tools
 export { default as SoraTheme } from './sora-theme/SoraTheme'
