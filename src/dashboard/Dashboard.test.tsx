@@ -2,6 +2,8 @@ import React from 'react'
 import { fireEvent, render, screen } from '@testing-library/react'
 import Dashboard from './Dashboard'
 import { act } from 'react-dom/test-utils'
+import SoraTheme from '../sora-theme/SoraTheme'
+import darkDefault from '../_styles/official_themes/dark_default'
 
 describe('Layouts/Dashboard', () => {
 
@@ -96,6 +98,27 @@ describe('Layouts/Dashboard', () => {
     expect(DashboardElement).toHaveTextContent(/Sidebar content/i)
     fireEvent.click(screen.getByTitle('HamburgerMenu'))
     expect(DashboardElement).not.toHaveTextContent(/Sidebar content/i)
+  })
+
+  test('Dashboard supports theme customisation', () => {
+    render(
+      <div style={{ alignItems: 'center', display: 'flex', gap: '20px' }}>
+        <SoraTheme theme={darkDefault}>
+          <Dashboard dataTestId='Customized1' />
+          <Dashboard dataTestId='Customized2' />
+        </SoraTheme>
+        <Dashboard dataTestId='Default1' />
+        <Dashboard dataTestId='Default2' />
+      </div>
+    )
+    const CustomNavbar = screen.getByTestId(/Customized1/i).getAttribute('class')
+    const CustomNavbar2 = screen.getByTestId(/Customized2/i).getAttribute('class')
+    const Default1 = screen.getByTestId(/Default1/i).getAttribute('class')
+    const Default2 = screen.getByTestId(/Default2/i).getAttribute('class')
+    expect(CustomNavbar).toMatch(`${CustomNavbar2}`)
+    expect(Default1).toMatch(`${Default2}`)
+    expect(CustomNavbar).not.toMatch(`${Default1}`)
+    expect(CustomNavbar).not.toMatch(`${Default2}`)
   })
 
 })

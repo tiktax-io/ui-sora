@@ -1,6 +1,6 @@
 import { createUseStyles } from 'react-jss'
 
-export const useStyles = createUseStyles({
+const styles = {
   container: {
     display: 'flex',
     height: '100%',
@@ -19,4 +19,6 @@ export const useStyles = createUseStyles({
       width: '100%'
     }
   }
-})
+}
+
+export const useStyles = createUseStyles((theme) => ({ ...styles, ...theme.Dashboard }))

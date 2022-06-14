@@ -14,6 +14,9 @@ export interface Theme {
     success_container?: CSSinJS
     danger_container?: CSSinJS
   }
+  Dashboard?: {
+    container?: CSSinJS
+  }
   Navbar?: {
     container?: CSSinJS
     content?: CSSinJS

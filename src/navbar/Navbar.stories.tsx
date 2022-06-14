@@ -15,7 +15,7 @@ const GreySquare = () => {
     style: {
       background: 'grey',
       borderRadius: '20px',
-      height: '40px',
+      height: '30px',
       width: '100px'
     }
   }

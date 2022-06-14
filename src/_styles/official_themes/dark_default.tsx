@@ -7,6 +7,9 @@ import { typography_scale } from '../typography'
 const successShadow = hexToRGB(success, 0.25)
 const dangerShadow = hexToRGB(danger, 0.25)
 const blackTint = hexToRGB(black, 1.05)
+const darkBackground = shadeColor(black, 1.99)
+const darkText = shadeColor(black, 0.27)
+const passiveBlack = shadeColor(black, 1.15)
 
 const darkDefault: Theme = {
   Button: {
@@ -79,11 +82,36 @@ const darkDefault: Theme = {
       }  
     }
   },
+  Dashboard: {
+    container: {
+      background: darkBackground,
+      color: darkText,
+      display: 'flex',
+      height: '100%',
+      left: 0,
+      position: 'absolute',
+      top: 0,
+      width: '100%',
+      '& aside': {
+        color: darkText,
+        flex: '0 0 320px',
+        height: '100%',
+        maxWidth: '100%',
+        top: 65,
+        width: '320px',
+      },
+      '& main': {
+        color: darkText,
+        width: '100%'
+      }
+    }  
+  },
   Navbar: {
     container: {
       alignItems: 'center',
-      background: black,
-      boxShadow: `0px 4px 4px 0px ${hexToRGB(black, 0.1)}`,
+      background: darkBackground,
+      borderBottom: `1px solid ${passiveBlack}`,
+      color: darkText,
       display: 'flex',
       gap: 40,
       height: '65px',
@@ -95,6 +123,7 @@ const darkDefault: Theme = {
     },
     content: {
       alignItems: 'center',
+      color: darkText,
       display: 'flex',
       gap: 40,
       height: '100%',
