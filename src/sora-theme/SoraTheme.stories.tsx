@@ -7,6 +7,10 @@ import { SoraThemeProps } from './SoraTheme.types'
 import darkDefault from '../_styles/official_themes/dark_default'
 import Navbar from '../navbar/Navbar'
 import TiktaxLogo from '../_assets/TiktaxLogo'
+import Dashboard from '../dashboard/Dashboard'
+import { shadeColor } from '../_utils/colors'
+import { black } from '../_styles'
+import { NavbarProps } from '../navbar/Navbar.types'
 
 export default {
   title: '_Customization/SoraTheme',
@@ -16,9 +20,9 @@ export default {
 const GreySquare = () => {
   const squareProperties = {
     style: {
-      background: 'grey',
+      background: shadeColor(black, 1.5),
       borderRadius: '20px',
-      height: '40px',
+      height: '30px',
       width: '100px'
     }
   }
@@ -51,8 +55,38 @@ const NavbarTemplate: ComponentStory<typeof SoraTheme> =
   </SoraTheme>
 )
 
+const dashboardNavbarProps: NavbarProps = {
+  children: <>
+    <TiktaxLogo />
+    <GreySquare />
+    <GreySquare />
+    <GreySquare />
+  </>,
+  color: shadeColor(black, 0.2)
+}
+
+const dashboardProps = {
+  navbarProps: dashboardNavbarProps
+}
+
+const style = {
+  height: '500px',
+  margin: '85px 5%',
+  width: '90%'
+}
+
+const DashboardTemplate: ComponentStory<typeof SoraTheme> =
+  (args: SoraThemeProps) => (
+  <SoraTheme {...args}>
+    <Dashboard {...dashboardProps}>
+      <div style={style}>Main content</div>
+    </Dashboard>
+  </SoraTheme>
+)
+
 export const DarkButtons = ButtonTemplate.bind({})
 export const DarkNavbar = NavbarTemplate.bind({})
+export const DarkDashboard = DashboardTemplate.bind({})
 
 DarkButtons.parameters = {
   backgrounds: { default: 'dark' }
@@ -67,5 +101,9 @@ DarkNavbar.parameters = {
 }
 
 DarkNavbar.args = {
+  theme: darkDefault
+}
+
+DarkDashboard.args = {
   theme: darkDefault
 }

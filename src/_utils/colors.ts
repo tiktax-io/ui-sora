@@ -6,7 +6,7 @@ import { Color } from '../_types'
  * @param {number} decimal
  * @returns {Color} Hex color
  *****************************************************************************/
-export const shadeColor = (color: string, decimal: number): string => {
+export const shadeColor = (color: string, decimal: number): Color => {
   const base = color.startsWith('#') ? 1 : 0
 
   let r = parseInt(color.substring(base, 3), 16)
@@ -34,7 +34,7 @@ export const shadeColor = (color: string, decimal: number): string => {
  * @param {number} opacity last value on rgba string, in scale 0 to 1.
  * @returns {sgring} string containing rgba value.
  *****************************************************************************/
-export const hexToRGB = (hex: string, opacity: number): string => {
+export const hexToRGB = (hex: string, opacity: number): Color => {
   const r = parseInt(hex.slice(1, 3), 16)
   const g = parseInt(hex.slice(3, 5), 16)
   const b = parseInt(hex.slice(5, 7), 16)
