@@ -33,7 +33,7 @@ describe('Navbar component', () => {
   const container = document.createElement('div')
   beforeEach(() => {
     document.body.appendChild(container)
-  })  
+  })
   /******************************************************************************
    * Reset DOM after each test
    *****************************************************************************/

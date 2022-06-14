@@ -17,6 +17,13 @@ const HamburgerMenu = ({
 )
 
 /******************************************************************************
+ * Component to display on top, usually displaying logo and navigation options.
+ * @param {ReactNode} children elements to render inside Navbar container.
+ * @param {string} dataTestId string to identify by id on tests. "data-testid".
+ * @param {boolean} hasHamburgerMenu boolean, true if renders hamburger menu
+ * icon to show/hide sidebar navigation.
+ * @param {() => void | undefined} onHamburgerMenuClick function to trigger on
+ * clicking hamburger menu icon.
  * @returns {ReactElement} HTML Header element wrapping content.
  * @see https://www.figma.com/file/GQCJ1nVFWevddz10mxmcgP/ui-sora?node-id=749%3A712
  *****************************************************************************/
