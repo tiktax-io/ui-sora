@@ -1,13 +1,13 @@
 import { Theme } from '../../_types'
 import { hexToRGB, shadeColor } from '../../_utils/colors'
-import { black, danger, success } from '../colors'
+import { black, danger, greyNeutral, primary, success } from '../colors'
 import { inputGlobalStyles } from '../inputs'
-import { typography_scale } from '../typography'
+import { fontFamily, typography_base, typography_scale } from '../typography'
 
 const successShadow = hexToRGB(success, 0.25)
 const dangerShadow = hexToRGB(danger, 0.25)
 const blackTint = hexToRGB(black, 1.05)
-const darkBackground = shadeColor(black, 1.99)
+export const darkBackground = shadeColor(black, 1.99)
 const darkText = shadeColor(black, 0.27)
 const passiveBlack = shadeColor(black, 1.15)
 
@@ -130,6 +130,64 @@ const darkDefault: Theme = {
       maxWidth: '1460px',
       width: '95%'
     }  
+  },
+  Tab: {
+    container: {
+      alignItems: 'center',
+      background: darkBackground,
+      borderRadius: '10px',
+      color: greyNeutral,
+      cursor: 'pointer',
+      display: 'flex',
+      flexDirection: 'row',
+      fontFamily: fontFamily,
+      fontSize: typography_base,
+      fontWeight: 700,
+      gap: 20,
+      height: '40px',
+      paddingLeft: '5%',
+      paddingRight: '5%',
+      transition: [['background', '300ms'], ['color', '300ms'], ['width', '300ms']],
+      width: '90%',
+      '&:hover': {
+        background: black,
+        color: 'white',
+        '& span': {
+          color: 'white'
+        }
+      },
+      '& span': {
+        color: greyNeutral
+      }  
+    },
+    selectedContainer: {
+      alignItems: 'center',
+      borderRadius: '10px',
+      cursor: 'pointer',
+      display: 'flex',
+      flexDirection: 'row',
+      fontFamily: fontFamily,
+      fontSize: typography_base,
+      fontWeight: 700,
+      gap: 20,
+      height: '40px',
+      paddingLeft: '5%',
+      paddingRight: '5%',
+      transition: [['background', '300ms'], ['color', '300ms'], ['width', '300ms']],
+      width: '90%',
+      '&:hover': {
+        background: black,
+        color: 'white',
+        '& span': {
+          color: 'white'
+        }
+      },
+      background: black,
+      color: 'white',
+      '& span': {
+        color: 'white'
+      }  
+    }
   }
 }
 

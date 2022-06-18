@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import Tab from './Tab'
 import { FlexDirection } from '../_types/global'
 import Icon from '../icon/Icon'
-import { IconName } from '../icon/Icon.types'
+import { IconName, IconProps } from '../icon/Icon.types'
 import { primary } from '../_styles'
 
 export default {
@@ -37,6 +37,10 @@ interface TabOption {
 
 type TabOptionsList = Array<TabOption>
 
+/******************************************************************************
+ * @returns {Array<TabOption>} Array of refactorized options of each Tab
+ * component. The array of which is supposed to be mapped to display it.
+ *****************************************************************************/
 const tabOptions: TabOptionsList = [
   {
     label: 'Dashboard',
@@ -65,18 +69,31 @@ const tabOptions: TabOptionsList = [
   }
 ]
 
-const SidebarTemplate: ComponentStory<typeof Tab> = () => {
+/******************************************************************************
+ * @returns ReactElement. Sidebar Div as demo of side navigation on Dashboards.
+ *****************************************************************************/
+export const SidebarWithTabs: ComponentStory<typeof Tab> = () => {
   const [isSelected, setIsSelected] = useState(0)
   const handleTabClick = (tab: TabOption, key: number) => {
     setIsSelected(key)
     tab?.onClick && tab.onClick()
   }
 
+  const tabProps = (tab: TabOption, i: number) =>({
+    isSelected: isSelected === i,
+    onClick: () => handleTabClick(tab, i)
+  })
+
+  const iconProps = (tab: TabOption, i: number): IconProps => ({
+    color: isSelected === i ? primary : undefined,
+    icon: tab.icon || 'dashboard'
+  })
+
   return (
     <div style={container}>
       {tabOptions.map((tab, i) => (
-        <Tab key={i} isSelected={isSelected === i} onClick={() => handleTabClick(tab, i)}>
-          <Icon color={isSelected === i ? primary : undefined} icon={tab.icon || 'dashboard'} />
+        <Tab key={i} {...tabProps(tab, i)}>
+          <Icon {...iconProps(tab, i)} />
           <span>{tab?.label}</span>
         </Tab>
       ))}
@@ -86,7 +103,6 @@ const SidebarTemplate: ComponentStory<typeof Tab> = () => {
 
 export const Default = Template.bind({})
 export const Selected = Template.bind({})
-export const SidebarWithTabs = SidebarTemplate.bind({})
 
 const commonArgs = {
   onClick: () => console.log('Tab clicked')

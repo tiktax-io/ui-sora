@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tab Snapshot of styles are matched 1`] = `
+Array [
+  <a
+    className="selectedContainer-0-2-2"
+    role="button"
+    tabIndex={0}
+  >
+    <svg
+      fill="none"
+      height={16}
+      viewBox="0 0 16 16"
+      width={16}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        clipRule="evenodd"
+        d="M5 4C4.45 4 4 4.45 4 5C4 5.55 4.45 6 5 6C5.55 6 6 5.55 6 5C6 4.45 5.55 4 5 4ZM4 7C3.45 7 3 7.45 3 8C3 8.55 3.45 9 4 9C4.55 9 5 8.55 5 8C5 7.45 4.55 7 4 7ZM8 5C8.55 5 9 4.55 9 4C9 3.45 8.55 3 8 3C7.45 3 7 3.45 7 4C7 4.55 7.45 5 8 5ZM6 11C6 12.1 6.9 13 8 13C9.1 13 10 12.1 10 11C10 10.47 8 6 8 6C8 6 6 10.47 6 11ZM8 0C3.58 0 0 3.58 0 8C0 12.42 3.58 16 8 16C12.42 16 16 12.42 16 8C16 3.58 12.42 0 8 0ZM8 14C4.69 14 2 11.31 2 8C2 4.69 4.69 2 8 2C11.31 2 14 4.69 14 8C14 11.31 11.31 14 8 14ZM12 5C12 4.45 11.55 4 11 4C10.45 4 10 4.45 10 5C10 5.55 10.45 6 11 6C11.55 6 12 5.55 12 5ZM12 7C11.45 7 11 7.45 11 8C11 8.55 11.45 9 12 9C12.55 9 13 8.55 13 8C13 7.45 12.55 7 12 7Z"
+        fill="#8F95B2"
+        fillRule="evenodd"
+      />
+    </svg>
+    <span>
+      Dashboard
+    </span>
+  </a>,
+  <a
+    className="container-0-2-1"
+    role="button"
+    tabIndex={0}
+  >
+    <svg
+      fill="none"
+      height={16}
+      viewBox="0 0 16 16"
+      width={16}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        clipRule="evenodd"
+        d="M15.0493 3.24707H1.87282C1.35517 3.24707 0.931641 3.6706 0.931641 4.18825V5.12942H15.9905V4.18825C15.9905 3.6706 15.5669 3.24707 15.0493 3.24707ZM0.931641 12.6588C0.931641 13.1765 1.35517 13.6 1.87282 13.6H15.0493C15.5669 13.6 15.9905 13.1765 15.9905 12.6588V7.01178H0.931641C0.931641 7.01178 0.931641 12.6588 0.931641 12.6588ZM6.10811 10.7765H10.814C11.0775 10.7765 11.2846 10.9835 11.2846 11.2471C11.2846 11.5106 11.0775 11.7177 10.814 11.7177H6.10811C5.84458 11.7177 5.63752 11.5106 5.63752 11.2471C5.63752 10.9835 5.85399 10.7765 6.10811 10.7765ZM3.28458 10.7765H4.22576C4.48929 10.7765 4.69635 10.9835 4.69635 11.2471C4.69635 11.5106 4.48929 11.7177 4.22576 11.7177H3.28458C3.02105 11.7177 2.81399 11.5106 2.81399 11.2471C2.81399 10.9835 3.03046 10.7765 3.28458 10.7765Z"
+        fill="#8F95B2"
+        fillRule="evenodd"
+      />
+    </svg>
+    <span>
+      Wallet
+    </span>
+  </a>,
+  <a
+    className="container-0-2-1"
+    role="button"
+    tabIndex={0}
+  >
+    <svg
+      fill="none"
+      height={16}
+      viewBox="0 0 16 16"
+      width={16}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        clipRule="evenodd"
+        d="M5 4C4.45 4 4 4.45 4 5C4 5.55 4.45 6 5 6C5.55 6 6 5.55 6 5C6 4.45 5.55 4 5 4ZM4 7C3.45 7 3 7.45 3 8C3 8.55 3.45 9 4 9C4.55 9 5 8.55 5 8C5 7.45 4.55 7 4 7ZM8 5C8.55 5 9 4.55 9 4C9 3.45 8.55 3 8 3C7.45 3 7 3.45 7 4C7 4.55 7.45 5 8 5ZM6 11C6 12.1 6.9 13 8 13C9.1 13 10 12.1 10 11C10 10.47 8 6 8 6C8 6 6 10.47 6 11ZM8 0C3.58 0 0 3.58 0 8C0 12.42 3.58 16 8 16C12.42 16 16 12.42 16 8C16 3.58 12.42 0 8 0ZM8 14C4.69 14 2 11.31 2 8C2 4.69 4.69 2 8 2C11.31 2 14 4.69 14 8C14 11.31 11.31 14 8 14ZM12 5C12 4.45 11.55 4 11 4C10.45 4 10 4.45 10 5C10 5.55 10.45 6 11 6C11.55 6 12 5.55 12 5ZM12 7C11.45 7 11 7.45 11 8C11 8.55 11.45 9 12 9C12.55 9 13 8.55 13 8C13 7.45 12.55 7 12 7Z"
+        fill="#8F95B2"
+        fillRule="evenodd"
+      />
+    </svg>
+    <span>
+      Dashboard
+    </span>
+  </a>,
+]
+`;
+
+exports[`Tab Tab supports theme customisation 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "gap": "20px",
+    }
+  }
+>
+  <a
+    className="container-0-2-3"
+    data-testid="Customized1"
+    role="button"
+    tabIndex={0}
+  />
+  <a
+    className="container-0-2-3"
+    data-testid="Customized2"
+    role="button"
+    tabIndex={0}
+  />
+  <a
+    className="container-0-2-1"
+    data-testid="Default1"
+    role="button"
+    tabIndex={0}
+  />
+  <a
+    className="container-0-2-1"
+    data-testid="Default2"
+    role="button"
+    tabIndex={0}
+  />
+</div>
+`;

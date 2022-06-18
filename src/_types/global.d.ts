@@ -15,12 +15,17 @@ export type CSSinJS = {
   display?: 'flex' | 'block' | 'inline' | 'inline-block' | 'grid' | 'inline-grid'
   flex?: string
   flexDirection?: FlexDirection
+  fontFamily?: string
+  fontSize?: string | number
+  fontWeight?: 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | 'normal' | 'bold' | 'bolder' | 'lighter'
   gap?: number
   height?: string
   justifyContent?: string
   left?: number
   maxWidth?: string
   padding?: string
+  paddingLeft?: string
+  paddingRight?: string
   position?: 'absolute' | 'fixed' | 'relative' | 'static' | 'sticky'
   top?: number
   transition?: Array<Array<string>>

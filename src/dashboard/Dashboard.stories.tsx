@@ -33,10 +33,10 @@ const Template: ComponentStory<typeof Dashboard> = (args: any) => {
 
   return (
     <Dashboard {...args}>
-    <div style={style}>
-      Main content
-    </div>
-  </Dashboard>
+      <div style={style}>
+        Main content
+      </div>
+    </Dashboard>
   )
 }
 
@@ -59,7 +59,7 @@ const SidebarChildren = () => {
 
 const commonArgs = {
   navbarProps: {
-    children: <><TiktaxLogo /><GreySquare /><GreySquare/></>
+    children: <><TiktaxLogo /><GreySquare /><GreySquare /></>
   },
   sidebarChildren: <SidebarChildren />
 }

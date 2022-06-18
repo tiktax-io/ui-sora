@@ -1,7 +1,7 @@
 {
   "name": "ui-sora",
   "description": "React UI Kit by tiktax.io",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "repository": "https://github.com/TonySapa/ui-library-boilerplate.git",

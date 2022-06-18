@@ -4,13 +4,14 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import SoraTheme from './SoraTheme'
 import Button from '../button/Button'
 import { SoraThemeProps } from './SoraTheme.types'
-import darkDefault from '../_styles/official_themes/dark_default'
+import darkDefault, { darkBackground } from '../_styles/official_themes/dark_default'
 import Navbar from '../navbar/Navbar'
 import TiktaxLogo from '../_assets/TiktaxLogo'
 import Dashboard from '../dashboard/Dashboard'
 import { shadeColor } from '../_utils/colors'
 import { black } from '../_styles'
 import { NavbarProps } from '../navbar/Navbar.types'
+import { SidebarWithTabs } from '../tab/Tab.stories'
 
 export default {
   title: '_Customization/SoraTheme',
@@ -84,9 +85,28 @@ const DashboardTemplate: ComponentStory<typeof SoraTheme> =
   </SoraTheme>
 )
 
+const TabTemplate: ComponentStory<typeof SoraTheme> =
+  (args: SoraThemeProps) => {
+  const container = {
+    background: darkBackground,
+    height: '100%',
+    left: 0,
+    top: 0,
+    width: '100%'
+  }
+  return (
+    <div style={container}>
+      <SoraTheme {...args}>
+        <SidebarWithTabs />
+      </SoraTheme>
+    </div>
+  )
+}
+
 export const DarkButtons = ButtonTemplate.bind({})
 export const DarkNavbar = NavbarTemplate.bind({})
 export const DarkDashboard = DashboardTemplate.bind({})
+export const DarkTabs = TabTemplate.bind({})
 
 DarkButtons.parameters = {
   backgrounds: { default: 'dark' }
@@ -106,4 +126,12 @@ DarkNavbar.args = {
 
 DarkDashboard.args = {
   theme: darkDefault
+}
+
+DarkTabs.args = {
+  theme: darkDefault
+}
+
+DarkTabs.parameters = {
+  backgrounds: { default: 'dark' }
 }

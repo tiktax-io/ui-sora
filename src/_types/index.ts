@@ -23,6 +23,7 @@ export interface Theme {
   }
   Tab?: {
     container?: CSSinJS
+    selectedContainer?: CSSinJS
   }
 }
 

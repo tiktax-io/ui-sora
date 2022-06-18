@@ -10,7 +10,8 @@ import { TabProps } from './Tab.types'
 /******************************************************************************
  * @param {ReactNode} children elements to render inside Navbar container.
  * @param {string} dataTestId string to identify by id on tests. "data-testid".
- * @param {() => void} onClick
+ * @param {boolean} isSelected true if the tab is selected.
+ * @param {() => void} onClick triggers function on click.
  * @returns ReactElement.
  *****************************************************************************/
 const Tab = memo(forwardRef(({
