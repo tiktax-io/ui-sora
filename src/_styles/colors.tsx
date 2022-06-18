@@ -25,3 +25,4 @@ export const primary: Color = blue
 export const success: Color = green
 export const danger: Color = red
 export const text: Color = black
+export const greyNeutral: Color = '#696F8C'

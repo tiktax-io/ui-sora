@@ -2,7 +2,7 @@ Live demo: https://6264addc81766b004a25fcf6-bzjbnsxnpa.chromatic.com/
 
 # ui-sora by tiktax.io
 
-<img src='https://raw.githubusercontent.com/tiktax-io/ui-sora/c174353fb0fef60d915ef4d6c76276f5e238b296/sora-github-hero-2.png'/>
+<img src='https://raw.githubusercontent.com/tiktax-io/ui-sora/c174353fb0fef60d915ef4d6c76276f5e238b296/sora-github-hero-2.png' />
 
 ## Motivation
 

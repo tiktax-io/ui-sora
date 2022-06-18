@@ -21,6 +21,10 @@ export interface Theme {
     container?: CSSinJS
     content?: CSSinJS
   }
+  Tab?: {
+    container?: CSSinJS
+    selectedContainer?: CSSinJS
+  }
 }
 
 export interface CustomHTMLAttributes {

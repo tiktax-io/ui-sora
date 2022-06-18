@@ -1,10 +1,12 @@
 import React, { ReactNode } from 'react'
+import renderer from 'react-test-renderer'
 import ReactDOM from 'react-dom/client'
 import { act } from 'react-dom/test-utils'
 import { fireEvent, render, screen } from '@testing-library/react'
 import Navbar from './Navbar'
 import SoraTheme from '../sora-theme/SoraTheme'
 import darkDefault from '../_styles/official_themes/dark_default'
+import { NavbarProps } from './Navbar.types'
 
 describe('Jest can resize window width', () => {
   const defaultWidth = window.innerWidth
@@ -27,6 +29,26 @@ describe('Jest can resize window width', () => {
   it('Viewport width is reseted after each test', () => {
     expect(window.innerWidth).not.toBe(390)
   })
+})
+
+test('Snapshot of styles are matched', () => {
+  const navbarProps: NavbarProps = {
+    color: '#0070ac',
+    dataTestId: 'test-snapshot',
+    hasHamburgerMenu: true,
+    onHamburgerMenuClick: () => console.log('snapshot navbar')
+  }
+
+  const tree = renderer
+    .create(
+      <>
+        <Navbar {...navbarProps}>
+          <span>Children</span>
+        </Navbar>
+      </>
+    )
+    .toJSON()
+  expect(tree).toMatchSnapshot()
 })
 
 describe('Navbar component', () => {
@@ -91,7 +113,7 @@ describe('Navbar component', () => {
       fireEvent.resize
     })
 
-    render(<Navbar/>)
+    render(<Navbar />)
     expect(screen.queryByTitle('HamburgerMenu')).toBeNull()
     act(() => {
       Object.defineProperty(window, 'innerWidth', {
@@ -116,7 +138,7 @@ describe('Navbar component', () => {
       fireEvent.resize
     })
 
-    render(<Navbar onHamburgerMenuClick={handleClick}/>)
+    render(<Navbar onHamburgerMenuClick={handleClick} />)
     expect(handleClick).toHaveBeenCalledTimes(0)
     fireEvent.click(screen.getByTitle('HamburgerMenu'))
     expect(handleClick).toHaveBeenCalledTimes(1)

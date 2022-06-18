@@ -7,6 +7,12 @@ import { ThemeProvider } from 'react-jss'
 export default {
   title: 'Atoms/Button',
   component: Button,
+  argTypes: {
+    appearance: {
+      options: ['default', 'primary', 'success', 'danger'],
+      control: { type: 'radio' }
+    }
+  }
 } as ComponentMeta<typeof Button>
 
 const customTheme = {
