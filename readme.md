@@ -1,8 +1,8 @@
 Live demo: https://master--62ad9768e03689594b027eb9.chromatic.com/
 
-# ui-sora by tiktax.io
-
-<img src='https://raw.githubusercontent.com/tiktax-io/ui-sora/c174353fb0fef60d915ef4d6c76276f5e238b296/sora-github-hero-2.png' />
+# ui-sora
+#### by tiktax.io
+![thumbnailui-sora_thumbnail](https://user-images.githubusercontent.com/49716479/174436132-f3738fc1-34fd-4374-b82c-cd90871a676b.png)
 
 ## Motivation
 
@@ -13,6 +13,8 @@ This library is built with 5 goals in mind:
 - To be mobile first and accessible. Some popular libraries are designing clickable elements without thinking how uncomfortable they are when using your finger.
 - To adapt to the current trends on UI/UX Design. The theme of the latest version should not be less modern that the top voted designs on Dribbble on the current month.
 - To have full TypeScript support and follow best practises.
+
+Live demo: https://master--62ad9768e03689594b027eb9.chromatic.com/
 
 ## Get started
 
@@ -41,3 +43,6 @@ import { Button, Badge, Tooltip } from 'ui-sora'
 A documentation site will be built soon. Meanwhile, we recommend run storybook to see your components in action. Clone or fork our repository: https://github.com/tiktax-io/ui-sora and install all dependencies with `npm install` or `yarn`.
 
 Run `npm run dev` or `yarn dev` right afterwards.
+
+## Live demo
+https://master--62ad9768e03689594b027eb9.chromatic.com/
