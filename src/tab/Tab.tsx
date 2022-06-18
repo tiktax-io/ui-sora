@@ -24,14 +24,14 @@ const Tab = memo(forwardRef(({
     className: isSelected ? classes.selectedContainer : classes.container,
     'data-testid': dataTestId,
     onClick: onClick,
-    ref: ref
+    ref: ref,
+    role: 'button',
+    tabIndex: 0
   }
 
   return (
     <a {...tabAttributes}>
-      <span>
-        {children}
-      </span>
+      {children}
     </a>
   )
 }))
