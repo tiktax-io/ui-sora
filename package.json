@@ -1,11 +1,11 @@
 {
   "name": "ui-sora",
   "description": "React UI Kit by tiktax.io",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
-  "repository": "https://github.com/TonySapa/ui-library-boilerplate.git",
-  "author": "TonySapa (https://tonisanchez.dev)",
+  "repository": "https://github.com/tonysapa/ui-library-boilerplate.git",
+  "author": "Toni Sánchez (https://tonisanchez.dev)",
   "license": "MIT",
   "sideEffects": false,
   "files": [
@@ -66,7 +66,7 @@
     "remove-builds": "node -e \"var fs = require('fs'); process.argv.slice(1).map((fpath) => fs.rmdirSync(fpath, { recursive: true })); process.exit(0);\"",
     "test": "jest",
     "test:watch": "jest --watch",
-    "chromatic": "npx chromatic --project-token=3ea386bd3fe4"
+    "chromatic": "npx chromatic --project-token=7568b9b6453d"
   },
   "engines": {
     "node": ">=14"

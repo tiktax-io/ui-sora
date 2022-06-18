@@ -19,6 +19,7 @@ const container = {
   display: 'flex',
   flexDirection: columnDirection,
   gap: 15,
+  marginTop: '65px',
   padding: '40px 20px',
   width: '280px'
 }

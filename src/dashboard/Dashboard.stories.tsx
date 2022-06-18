@@ -3,6 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
 import Dashboard from './Dashboard'
 import TiktaxLogo from '../_assets/TiktaxLogo'
+import { SidebarWithTabs } from '../tab/Tab.stories'
 
 export default {
   title: 'Layouts/Dashboard',
@@ -40,8 +41,33 @@ const Template: ComponentStory<typeof Dashboard> = (args: any) => {
   )
 }
 
+const FullExampleTemplate: ComponentStory<typeof Dashboard> = () => {
+  const style = {
+    background: 'white',
+    height: '500px',
+    margin: '85px 5%',
+    width: '90%'
+  }
+
+  const dashboardProps = {
+    navbarProps: {
+      children: <><TiktaxLogo /><GreySquare /><GreySquare /></>
+    },
+    sidebarChildren: <SidebarWithTabs />
+  }
+
+  return (
+    <Dashboard {...dashboardProps}>
+      <div style={style}>
+        Main content
+      </div>
+    </Dashboard>
+  )
+}
+
 export const Default = Template.bind({})
 export const NarrowScreen = Template.bind({})
+export const FullExample = FullExampleTemplate.bind({})
 
 const SidebarChildren = () => {
   const style = {
