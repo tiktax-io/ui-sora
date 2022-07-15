@@ -2,6 +2,7 @@ import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 import SearchResults from './SearchResults'
+import { black, text } from '../_styles'
 
 export default {
   title: 'Layouts/SearchResults',
@@ -18,6 +19,14 @@ const demoContent = [
   {
     field1: 'Title2',
     field2: 'Text2'
+  },
+  {
+    field1: 'Title3',
+    field2: 'Text3'
+  },
+  {
+    field1: 'Title4',
+    field2: 'Text4'
   }
 ]
 
@@ -28,18 +37,36 @@ type DemoCardTypes = {
 
 const DemoCard = (props: DemoCardTypes) => {
   return (
-    <div>
+    <>
       <h1>{props.field1}</h1>
       <h1>{props.field2}</h1>
-    </div>
+    </>
   )
 }
 
 export const Default = Template.bind({})
 
+const sidebarStyles = {
+  background: 'white',
+  borderRadius: '15px',
+  height: '827px',
+  width: '100%'
+}
+
+Default.parameters = {
+  backgrounds: { default: 'light' },
+}
+
 Default.args = {
-  // eslint-disable-next-line react/jsx-key
-  children: demoContent.map((element) => <DemoCard field1={element.field1} field2={element.field2} />)
+  children: demoContent.map((element) =>
+    // eslint-disable-next-line react/jsx-key
+    <DemoCard field1={element.field1} field2={element.field2} />
+  ),
+  resultsMessage:
+    <p>
+      <span style={{ fontWeight: 600 }}>1894</span> results for <span style={{ fontWeight: 600 }}>accounting firms in barcelona</span>
+    </p>,
+  sidebar: <div style={sidebarStyles}>sidebar content</div>
 }
 
 /* Primary.args = {
