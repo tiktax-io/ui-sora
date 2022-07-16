@@ -15,6 +15,7 @@ export type CSSinJS = {
   display?: 'flex' | 'block' | 'inline' | 'inline-block' | 'grid' | 'inline-grid'
   flex?: string
   flexDirection?: FlexDirection
+  flexWrap?: 'nowrap' | 'wrap' | 'wrap-reverse'
   fontFamily?: string
   fontSize?: string | number
   fontWeight?: 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | 'normal' | 'bold' | 'bolder' | 'lighter'

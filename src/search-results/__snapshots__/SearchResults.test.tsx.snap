@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchResults layout Snapshot on desktop screens are matched 1`] = `
+<div
+  className="container-0-2-2"
+>
+  <div
+    className="sidebar-0-2-7"
+  >
+    <span>
+      sidebar here
+    </span>
+  </div>
+  <div
+    className="mainContent-0-2-4"
+  >
+    <div
+      className="searchBar-0-2-6"
+    >
+      <span>
+        searchbar here
+      </span>
+    </div>
+    <div
+      className="resultsMessage-0-2-5"
+    >
+      <span>
+        Result message here
+      </span>
+    </div>
+    <div
+      className="grid-0-2-3"
+    >
+      <div
+        className="cardContainer-0-2-1"
+      >
+        one
+      </div>
+      <div
+        className="cardContainer-0-2-1"
+      >
+        two
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SearchResults layout Snapshot on smartphone screens are matched 1`] = `
+<div
+  className="container-0-2-2"
+>
+  <div
+    className="sidebar-0-2-7"
+  >
+    <span>
+      sidebar here
+    </span>
+  </div>
+  <div
+    className="mainContent-0-2-4"
+  >
+    <div
+      className="searchBar-0-2-6"
+    >
+      <span>
+        searchbar here
+      </span>
+    </div>
+    <div
+      className="resultsMessage-0-2-5"
+    >
+      <span>
+        Result message here
+      </span>
+    </div>
+    <div
+      className="grid-0-2-3"
+    >
+      <div
+        className="cardContainer-0-2-1"
+      >
+        one
+      </div>
+      <div
+        className="cardContainer-0-2-1"
+      >
+        two
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SearchResults layout Snapshot on tablet screens are matched 1`] = `
+<div
+  className="container-0-2-2"
+>
+  <div
+    className="sidebar-0-2-7"
+  >
+    <span>
+      sidebar here
+    </span>
+  </div>
+  <div
+    className="mainContent-0-2-4"
+  >
+    <div
+      className="searchBar-0-2-6"
+    >
+      <span>
+        searchbar here
+      </span>
+    </div>
+    <div
+      className="resultsMessage-0-2-5"
+    >
+      <span>
+        Result message here
+      </span>
+    </div>
+    <div
+      className="grid-0-2-3"
+    >
+      <div
+        className="cardContainer-0-2-1"
+      >
+        one
+      </div>
+      <div
+        className="cardContainer-0-2-1"
+      >
+        two
+      </div>
+    </div>
+  </div>
+</div>
+`;

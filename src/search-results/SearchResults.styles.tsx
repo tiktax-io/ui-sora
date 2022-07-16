@@ -3,8 +3,6 @@ import { fontFamily, typography_base } from '../_styles'
 
 export const useStyles = createUseStyles({
   cardContainer: {
-    background: 'white',
-    borderRadius: '15px',
     minWidth: '300px',
     width: '100%'
   },
@@ -33,9 +31,7 @@ export const useStyles = createUseStyles({
     marginBottom: '30px'
   },
   searchBar: {
-    background: 'white',
-    borderRadius: '15px',
-    height: '92px',
+    minHeight: '92px',
     marginBottom: '45px',
     width: '100%'
   },

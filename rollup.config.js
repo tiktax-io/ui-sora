@@ -14,7 +14,7 @@ export default [
       { file: pkg.main, format: "cjs" },
       { file: pkg.module, format: "esm" },
       {
-        file: "es/src/reactComponentLib/index.js",
+        file: "es/src/index.js",
         format: "es",
         banner: "/* eslint-disable */"
       }

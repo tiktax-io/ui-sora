@@ -7,12 +7,15 @@ import { RowDisplayOptions, SearchResultsProps } from './SearchResults.types'
  * @param {RowDisplayOptions} displayAs determines if information will be
  * displayed as cards or rows.
  * @param {ReactNode} resultsMessage optional message explaining results.
+ * @param {ReactNode} searchbar component to be wrapped inside searchbar on top
+ * of cards.
  * @param {ReactNode} sidebar component to be wrapped inside sidebar.
  * @returns {ReactNode} Layout containing a side div and grid.
  *****************************************************************************/
 const SearchResults = memo(forwardRef(({
   children,
   resultsMessage,
+  searchbar,
   sidebar
 }: SearchResultsProps, ref: ForwardedRef<HTMLDivElement> | undefined) => {
   const classes = useStyles()
@@ -23,7 +26,7 @@ const SearchResults = memo(forwardRef(({
       </div>
       <div className={classes.mainContent}>
         <div className={classes.searchBar}>
-          Searchbar here
+          {searchbar}
         </div>
         <div className={classes.resultsMessage}>
           {resultsMessage}
