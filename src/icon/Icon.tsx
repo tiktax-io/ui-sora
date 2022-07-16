@@ -63,8 +63,28 @@ const BellIcon = memo(({
 })
 
 /******************************************************************************
+ * @returns Icon as a danger exclamation symbol. See:
+ * https://fontawesome.com/icons/circle-exclamation?s=solid
+ *****************************************************************************/
+ const DangerIcon = memo(({
+  color = '#8F95B2'
+}: IconPath) => {
+  return <path d="M8 0C3.58125 0 0 3.58125 0 8C0 12.4187 3.58125 16 8 16C12.4187 16 16 12.4187 16 8C16 3.58125 12.4187 0 8 0ZM7.25 4.75C7.25 4.3375 7.5875 4 8 4C8.4125 4 8.75 4.33594 8.75 4.75V8.75C8.75 9.16406 8.41406 9.5 8 9.5C7.58594 9.5 7.25 9.16563 7.25 8.75V4.75ZM8 12.5C7.4575 12.5 7.0175 12.06 7.0175 11.5175C7.0175 10.975 7.45719 10.535 8 10.535C8.54281 10.535 8.9825 10.975 8.9825 11.5175C8.98125 12.0594 8.54375 12.5 8 12.5Z" fill={color} />
+})
+
+/******************************************************************************
+ * @returns Icon as a success check symbol. See:
+ * https://fontawesome.com/icons/circle-exclamation?s=solid
+ *****************************************************************************/
+ const SuccessIcon = memo(({
+  color = '#8F95B2'
+}: IconPath) => {
+  return <path d="M0 8C0 3.58125 3.58125 0 8 0C12.4187 0 16 3.58125 16 8C16 12.4187 12.4187 16 8 16C3.58125 16 0 12.4187 0 8ZM11.6187 6.61875C11.9594 6.27813 11.9594 5.72187 11.6187 5.38125C11.2781 5.04062 10.7219 5.04062 10.3813 5.38125L7 8.7625L5.61875 7.38125C5.27813 7.04062 4.72187 7.04062 4.38125 7.38125C4.04062 7.72187 4.04062 8.27812 4.38125 8.61875L6.38125 10.6187C6.72187 10.9594 7.27813 10.9594 7.61875 10.6187L11.6187 6.61875Z" fill={color} />
+})
+
+/******************************************************************************
  * Functional component that renders an SVG icon.
- * @param {Color} Color icon color in #hex or rgba format.
+ * @param {Color} color icon color in #hex or rgba format.
  * @param {string} dataTestId string to identify by id on tests. "data-testid".
  * @param {Color} fill icon background in #hex or rgba format.
  * @param {number} height height of the svg container as an integer.
@@ -133,6 +153,18 @@ const Icon = memo(forwardRef(({
       return (
         <svg {...svgAttributes}>
           {title && <title>{title}</title>}<BellIcon {...iconAttributes} />
+        </svg>
+      )
+    case 'danger':
+      return (
+        <svg {...svgAttributes}>
+          {title && <title>{title}</title>}<DangerIcon {...iconAttributes} />
+        </svg>
+      )
+    case 'success':
+      return (
+        <svg {...svgAttributes}>
+          {title && <title>{title}</title>}<SuccessIcon {...iconAttributes} />
         </svg>
       )
     default:
