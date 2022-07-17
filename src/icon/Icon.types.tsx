@@ -1,6 +1,6 @@
 import { Color } from '../_types'
 
-export type IconName = 'dashboard' | 'time' | 'wallet' | 'integrations' | 'settings' | 'bell' | 'danger' | 'success'
+export type IconName = 'dashboard' | 'time' | 'wallet' | 'integrations' | 'settings' | 'bell' | 'danger' | 'success' | 'hide' | 'show'
 
 export type IconPath = {
   color?: Color
