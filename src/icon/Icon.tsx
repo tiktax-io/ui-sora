@@ -83,12 +83,33 @@ const BellIcon = memo(({
 })
 
 /******************************************************************************
+ * @returns Icon as a slashed eye, representing "hide" feature. See:
+ * https://fontawesome.com/icons/eye-slash?s=solid
+ *****************************************************************************/
+ const HideIcon = memo(({
+  color = '#8F95B2'
+}: IconPath) => {
+  return <path d="M4.15068 2.53665C5.362 1.5933 6.91511 0.874986 8.77993 0.874986C10.9893 0.874986 12.7584 1.88232 14.0463 3.07887C15.326 4.26557 16.1818 5.66283 16.5865 6.6636C16.6767 6.87961 16.6767 7.12023 16.5865 7.33624C16.2201 8.21944 15.4845 9.46357 14.4017 10.5737L17.2783 12.8268C17.5627 13.051 17.6146 13.4639 17.3904 13.7483C17.1662 14.0327 16.7533 14.0846 16.4689 13.8604L0.281475 1.17276C-0.00377213 0.949087 -0.0537833 0.536747 0.169804 0.251446C0.393419 -0.0338014 0.805758 -0.0838126 1.09122 0.139775L4.15068 2.53665ZM6.13035 4.08784L8.59946 6.02376C8.71431 5.79134 8.77993 5.52884 8.77993 5.22533C8.77993 4.93549 8.67329 4.64018 8.55025 4.38589C8.62681 4.37768 8.70337 4.35034 8.77993 4.35034C10.2291 4.35034 11.4049 5.52611 11.4049 6.97531C11.4049 7.37453 11.3256 7.72999 11.1615 8.05264L12.2416 8.87842C12.5451 8.32061 12.7174 7.68077 12.7174 6.97531C12.7174 4.82612 10.9537 3.03785 8.77993 3.03785C7.76002 3.03785 6.82761 3.45074 6.13035 4.08784ZM8.77993 13.1249C6.57058 13.1249 4.80146 12.1186 3.51358 10.921C2.23445 9.70966 1.37915 8.31241 0.97228 7.33624C0.882593 7.12023 0.882593 6.87961 0.97228 6.6636C1.23314 6.03743 1.67856 5.22806 2.30199 4.41596L4.88075 6.44758C4.85615 6.62805 4.84247 6.81125 4.84247 6.97531C4.84247 9.17373 6.60613 10.9374 8.77993 10.9374C9.29125 10.9374 9.7807 10.8389 10.2291 10.6612L12.2307 12.2362C11.2381 12.7721 10.0869 13.1249 8.77993 13.1249Z" fill={color} />
+})
+
+/******************************************************************************
+ * @returns Icon as an eye symbol, representing "show" feature. See:
+ * https://fontawesome.com/search?q=eye&s=solid%2Cbrands
+ *****************************************************************************/
+ const ShowIcon = memo(({
+  color = '#8F95B2'
+}: IconPath) => {
+  return <path d="M9.26827 4.0125C9.35577 4.00312 9.44327 4 9.53077 4C11.187 4 12.5308 5.31562 12.5308 7C12.5308 8.65625 11.187 10 9.53077 10C7.84639 10 6.53077 8.65625 6.53077 7C6.53077 6.9125 6.53389 6.825 6.54327 6.7375C6.83389 6.87813 7.17139 7 7.53077 7C8.63389 7 9.53077 6.10312 9.53077 5C9.53077 4.64062 9.40889 4.30312 9.26827 4.0125ZM15.5495 2.51875C17.012 3.875 17.9901 5.47187 18.4526 6.61562C18.5558 6.8625 18.5558 7.1375 18.4526 7.38437C17.9901 8.5 17.012 10.0969 15.5495 11.4812C14.0776 12.85 12.0558 14 9.53077 14C7.00577 14 4.98389 12.85 3.51264 11.4812C2.05014 10.0969 1.07264 8.5 0.607672 7.38437C0.505125 7.1375 0.505125 6.8625 0.607672 6.61562C1.07264 5.47187 2.05014 3.875 3.51264 2.51875C4.98389 1.15125 7.00577 0 9.53077 0C12.0558 0 14.0776 1.15125 15.5495 2.51875ZM9.53077 2.5C7.04639 2.5 5.03077 4.51562 5.03077 7C5.03077 9.48438 7.04639 11.5 9.53077 11.5C12.0151 11.5 14.0308 9.48438 14.0308 7C14.0308 4.51562 12.0151 2.5 9.53077 2.5Z" fill={color} />
+})
+
+/******************************************************************************
  * Functional component that renders an SVG icon.
  * @param {Color} color icon color in #hex or rgba format.
  * @param {string} dataTestId string to identify by id on tests. "data-testid".
  * @param {Color} fill icon background in #hex or rgba format.
  * @param {number} height height of the svg container as an integer.
  * @param {IconName} icon a string identifying the specific icon to render.
+ * @param {number} size height/width (squared) integer of the svg container.
  * @param {string} viewBox svg viewbox properties formated as "0 0 16 16".
  * @param {number} width width of the svg container as an integer.
  * @returns ReactElement. SVG icon
@@ -97,12 +118,12 @@ const Icon = memo(forwardRef(({
   color = '#8F95B2',
   dataTestId,
   fill = 'none',
-  height,
+  height = 16,
   icon,
   size = 16,
   title,
-  viewBox = '0 0 16 16',
-  width
+  viewBox,
+  width = 16
 }: IconProps, ref: LegacyRef<SVGSVGElement> | undefined): ReactElement | null => {
   const iconAttributes = {
     color,
@@ -113,7 +134,7 @@ const Icon = memo(forwardRef(({
     fill,
     height: Number(height) > 0 ? height : size,
     ref,
-    viewBox: viewBox ? viewBox : `0 0 ${size} ${size}`,
+    viewBox: viewBox ? viewBox : `0 0 ${width} ${height}`,
     xmlns: 'http://www.w3.org/2000/svg',
     width: Number(width) > 0 ? width : size
   }
@@ -165,6 +186,18 @@ const Icon = memo(forwardRef(({
       return (
         <svg {...svgAttributes}>
           {title && <title>{title}</title>}<SuccessIcon {...iconAttributes} />
+        </svg>
+      )
+    case 'show':
+      return (
+        <svg {...svgAttributes}>
+          {title && <title>{title}</title>}<ShowIcon {...iconAttributes} />
+        </svg>
+      )
+    case 'hide':
+      return (
+        <svg {...svgAttributes}>
+          {title && <title>{title}</title>}<HideIcon {...iconAttributes} />
         </svg>
       )
     default:
