@@ -1,8 +1,4 @@
-Live demo: https://master--62ad9768e03689594b027eb9.chromatic.com/
-
-# ui-sora
-#### by tiktax.io
-![thumbnailui-sora_thumbnail](https://user-images.githubusercontent.com/49716479/174436132-f3738fc1-34fd-4374-b82c-cd90871a676b.png)
+![ui-sora-tiktax-thumbnail](https://user-images.githubusercontent.com/49716479/179391222-f3d79b2b-71ab-4a35-8e28-6b1a326c197d.png)
 
 ## Motivation
 
