@@ -12,10 +12,13 @@ import { TextProps } from './Text.types'
  * the font. 0 is the base size, -1 is one size smaller than base, 1 is one
  * size greater than base. If left blank size will be 0.
  * @param {CSSinJS['fontWeight']} weight. Specify weight from 100 to 900.
- * @returns {ReactElement} Text element that will depend on props. "h1"-"h6"
- * headings, "p" paragraphs or span elements.
+ * @returns {ReactElement<TextType>} Text element that will depend on props.
+ * "h1"-"h6" headings, "p" paragraphs or span elements.
  *****************************************************************************/
-const Text = ({ children }: TextProps): ReactElement<TextType> => {
+const Text = ({
+  children,
+  size = 0
+}: TextProps): ReactElement<TextType> => {
   const classes = useStyles()
   return (
     <span>
