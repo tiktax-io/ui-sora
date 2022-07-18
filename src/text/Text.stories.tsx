@@ -114,10 +114,10 @@ const ScaleTemplate: ComponentStory<typeof Text> = () => {
             {Math.pow(typography_ratio, 5 - i).toFixed(2)}
           </div>
           <div className={classes.measureUnit}>
-            vmin
+            {(typography_base * 0.192857143  * (Math.pow(typography_ratio, 5 - i))).toFixed(2)}
           </div>
           <div className={classes.measureUnit}>
-          {(typography_base * (Math.pow(typography_ratio, 5 - i))).toFixed(2)}
+            {(typography_base * (Math.pow(typography_ratio, 5 - i))).toFixed(2)}
           </div>
         </div>
       ))}

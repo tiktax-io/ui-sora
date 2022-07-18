@@ -11,8 +11,8 @@ import { TextProps } from './Text.types'
  * @param {Color} color Specify color of text.
  * @param {CSSinJS} css Css properties to add.
  * @param {TextProps['element']} element HTML element that will wrap text.
- * @param {TextSize} size Natural number (can be negative) representing scale of
- * the font. 0 is the base size, -1 is one size smaller than base, 1 is one
+ * @param {TextSize} size Natural number (can be negative) representing scale
+ * of the font. 0 is the base size, -1 is one size smaller than base, 1 is one
  * size greater than base. If left blank size will be 0.
  * @param {CSSinJS['fontWeight']} weight. Specify weight from 100 to 900.
  * @returns {ReactElement<TextType>} Text element that will depend on props.
@@ -66,24 +66,24 @@ const Text = memo(forwardRef((props: TextProps, ref: LegacyRef<TextType>):
           ? getHeadingElement(size)
           : 'span'
   
-  /******************************************************************************
+  /****************************************************************************
    * Gets the size specified on props and returns the appropiate default
    * font-weight property for that text.
    * @param {TextProps['size']} size prop passed to Text component.
    * @returns {CSSinJS['fontWeight']} fontWeight property value.
-   *****************************************************************************/
+   ***************************************************************************/
   const getWeight = (size: number) => {
     return (size <= 5 && size >= 1) || size === -2
       ? 700 
       : 'normal'
   }
 
-  /******************************************************************************
+  /****************************************************************************
    * Gets the size specified on props and returns the appropiate default
    * font-size property for that text.
    * @param {TextProps['size']} size prop passed to Text component.
    * @returns font-size property value.
-   *****************************************************************************/
+   ***************************************************************************/
   const getTypoSize = (size: number, unit: 'px' | 'vmin') => {
     const baseVmin = typography_base * 0.192857143 // '2.7vmin'
     const fontSizeViewPort = `${
