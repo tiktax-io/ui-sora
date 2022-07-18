@@ -32,6 +32,19 @@ describe('Text', () => {
     expect(tree).toMatchSnapshot()
   })
 
+  test('Can specify font-size via props', () => {
+    const tree = renderer
+      .create(
+        <>
+          <Text size={2}>My custom text</Text>
+          <Text size={3}>My custom text</Text>
+        </>
+      )
+      .toJSON()
+    
+    expect(tree).toMatchSnapshot()
+  })
+
   test('CSS Properties can be passed as props', () => {
     const customCSS = {
       opacity: 0.4,

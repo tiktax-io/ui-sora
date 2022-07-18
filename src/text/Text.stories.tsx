@@ -40,15 +40,17 @@ const ScaleTemplate: ComponentStory<typeof Text> = () => {
       flexDirection: 'row',
       flexWrap: 'wrap',
       fontFamily: fontFamily,
-      gap: '10px',
+      fontSize: `${typography_base * 0.192857143}vmin`,
+      gap: '20px',
       height: '100%',
       left: 0,
-      maxWidth: '800px',
+      maxWidth: '1000px',
       top: 0,
       width: '100%'
     },
     row: {
       display: 'flex',
+      height: 'auto',
       width: '100%'
     },
     text: {
