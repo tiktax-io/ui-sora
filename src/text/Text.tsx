@@ -25,7 +25,7 @@ const Text = memo(forwardRef((props: TextProps, ref: LegacyRef<TextType>):
     css,
     element,
     size = 0,
-    weight
+    weight = 'normal'
   } = props
   const classes = useStyles()
 
@@ -70,7 +70,8 @@ const Text = memo(forwardRef((props: TextProps, ref: LegacyRef<TextType>):
     className: classes.default,
     ref: ref,
     style: {
-      color: color
+      color: color,
+      fontWeight: weight
     }
   }
   const htmlElement = getElement(element)

@@ -7,8 +7,24 @@ exports[`Text Can customize color via props 1`] = `
   style={
     Object {
       "color": "#F45B69",
+      "fontWeight": "normal",
     }
   }
+>
+  My custom text
+</span>
+`;
+
+exports[`Text Can specify weight via props 1`] = `
+<span
+  className="default-0-2-1"
+  style={
+    Object {
+      "color": undefined,
+      "fontWeight": 700,
+    }
+  }
+  weight={700}
 >
   My custom text
 </span>

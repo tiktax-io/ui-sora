@@ -21,4 +21,15 @@ describe('Text', () => {
     
     expect(tree).toMatchSnapshot()
   })
+
+  test('Can specify weight via props', () => {
+    const tree = renderer
+      .create(
+        <Text weight={700}>My custom text</Text>
+      )
+      .toJSON()
+    
+    expect(tree).toMatchSnapshot()
+  })
+
 })

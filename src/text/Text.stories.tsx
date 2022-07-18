@@ -9,6 +9,16 @@ import { danger, fontFamily, typography_base, typography_ratio } from '../_style
 export default {
   title: 'Atoms/Text',
   component: Text,
+  argTypes: {
+    size: {
+      control: 'radio',
+      options: [ -3, -2, -1, 0, 1, 2, 3, 4, 5 ]
+    },
+    weight: {
+      control: 'radio',
+      options: [ 100, 200, 300, 400, 500, 600, 700, 800, 900 ]
+    }
+  }
 } as ComponentMeta<typeof Text>
 
 const demoText: {[index: number | string]: string} = {
@@ -140,18 +150,17 @@ export const Paragraph = Template.bind({})
 
 /******************************************************************************
  * Specified the color of the text
- * @returns {ReactElement<HTMLSpanElement>} Paragraph element containing the
+ * @returns {ReactElement<HTMLSpanElement>} Span element containing the
  * text "Base text like paragraphs and data displayed on tables"
  *****************************************************************************/
 export const CustomColor = Template.bind({})
 
-/* Primary.parameters = {
-  backgrounds: { default: 'dark' }
-} */
-
-/* Default.args = {
-  size:
-} */
+/******************************************************************************
+ * Specified the weight of the text
+ * @returns {ReactElement<HTMLSpanElement>} Span element containing the
+ * text "Base text like paragraphs and data displayed on tables"
+ *****************************************************************************/
+export const WeightedText = Template.bind({})
 
 Paragraph.args = {
   element: 'paragraph'
@@ -161,8 +170,6 @@ CustomColor.args = {
   color: danger
 }
 
-/* export const Secondary = Template.bind({})
-Secondary.args = {
-  label: 'Text',
-  variant: TextVariants.secondary
-} */
+WeightedText.args = {
+  weight: 700
+}
