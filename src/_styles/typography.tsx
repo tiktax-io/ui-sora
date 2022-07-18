@@ -1,4 +1,4 @@
-const typography_ratio: number = 1.25
+export const typography_ratio: number = 1.25
 export const typography_base: number = 14
 export const fontFamily: string = '"Inter", sans-serif'
 
