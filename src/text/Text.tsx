@@ -17,15 +17,16 @@ import { TextProps } from './Text.types'
  * @returns {ReactElement<TextType>} Text element that will depend on props.
  * "h1"-"h6" headings, "p" paragraphs or span elements.
  *****************************************************************************/
-const Text = memo(forwardRef(({
-  children,
-  color,
-  css,
-  element,
-  size = 0,
-  weight
-}: TextProps, ref: LegacyRef<TextType>):
+const Text = memo(forwardRef((props: TextProps, ref: LegacyRef<TextType>):
   DetailedReactHTMLElement<HTMLAttributes<HTMLElement>, HTMLElement> => {
+  const {
+    children,
+    color,
+    css,
+    element,
+    size = 0,
+    weight
+  } = props
   const classes = useStyles()
 
   /****************************************************************************
@@ -64,8 +65,16 @@ const Text = memo(forwardRef(({
           ? getHeadingElement(size)
           : 'span'
 
+  const attributes = {
+    ...props,
+    className: classes.default,
+    ref: ref,
+    style: {
+      color: color
+    }
+  }
   const htmlElement = getElement(element)
-  return createElement(htmlElement, null, children)
+  return createElement(htmlElement, attributes, children)
 }))
 
 export default Text

@@ -4,6 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import Text from './Text'
 import { TextProps } from './Text.types'
 import { createUseStyles } from 'react-jss'
+import { danger, fontFamily, typography_base, typography_ratio } from '../_styles'
 
 export default {
   title: 'Atoms/Text',
@@ -28,6 +29,7 @@ const ScaleTemplate: ComponentStory<typeof Text> = () => {
       display: 'flex',
       flexDirection: 'row',
       flexWrap: 'wrap',
+      fontFamily: fontFamily,
       gap: '10px',
       height: '100%',
       left: 0,
@@ -46,6 +48,7 @@ const ScaleTemplate: ComponentStory<typeof Text> = () => {
     },
     measureUnit: {
       alignItems: 'center',
+      display: 'flex',
       flex: 'flexEnd',
       justifyContent: 'center',
       width: '100px'
@@ -73,6 +76,9 @@ const ScaleTemplate: ComponentStory<typeof Text> = () => {
           Title
         </div>
         <div className={classes.measureUnit}>
+          size
+        </div>
+        <div className={classes.measureUnit}>
           em
         </div>
         <div className={classes.measureUnit}>
@@ -84,9 +90,23 @@ const ScaleTemplate: ComponentStory<typeof Text> = () => {
       </div>
       {arrayOftexts.map((text, i) => (
         <div key={i} className={classes.row}>
-          <Text size={5 - i}>
-            {text}
-          </Text>
+          <div className={classes.text}>
+            <Text size={5 - i}>
+              {text}
+            </Text>
+          </div>
+          <div className={classes.measureUnit}>
+            {5 - i}
+          </div>
+          <div className={classes.measureUnit}>
+            {Math.pow(typography_ratio, 5 - i).toFixed(2)}
+          </div>
+          <div className={classes.measureUnit}>
+            vmin
+          </div>
+          <div className={classes.measureUnit}>
+          {(typography_base * (Math.pow(typography_ratio, 5 - i))).toFixed(2)}
+          </div>
         </div>
       ))}
     </div>
@@ -113,10 +133,17 @@ export const Default = Template.bind({})
 
 /******************************************************************************
  * Specified the element to be a paragraph.
+ * @returns {ReactElement<HTMLParagraphElement>} Paragraph element containing
+ * the text "Base text like paragraphs and data displayed on tables"
+ *****************************************************************************/
+export const Paragraph = Template.bind({})
+
+/******************************************************************************
+ * Specified the color of the text
  * @returns {ReactElement<HTMLSpanElement>} Paragraph element containing the
  * text "Base text like paragraphs and data displayed on tables"
  *****************************************************************************/
- export const Paragraph = Template.bind({})
+export const CustomColor = Template.bind({})
 
 /* Primary.parameters = {
   backgrounds: { default: 'dark' }
@@ -128,6 +155,10 @@ export const Default = Template.bind({})
 
 Paragraph.args = {
   element: 'paragraph'
+}
+
+CustomColor.args = {
+  color: danger
 }
 
 /* export const Secondary = Template.bind({})

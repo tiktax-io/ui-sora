@@ -1,19 +1,10 @@
 import { createUseStyles } from 'react-jss'
+import { fontFamily, text, typography_base } from '../_styles'
 
 export const useStyles = createUseStyles({
-  myButton: {
-    color: 'green',
-    margin: {
-      top: 5,
-      right: 0,
-      bottom: 0,
-      left: '1rem'
-    },
-    '& span': {
-      fontWeight: 'bold'
-    }
-  },
-  myLabel: {
-    fontStyle: 'italic'
+  default: {
+    color: text,
+    fontFamily: fontFamily,
+    fontSize: typography_base
   }
 })

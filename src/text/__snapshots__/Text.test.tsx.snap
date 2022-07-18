@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text Can customize color via props 1`] = `
+<span
+  className="default-0-2-1"
+  color="#F45B69"
+  style={
+    Object {
+      "color": "#F45B69",
+    }
+  }
+>
+  My custom text
+</span>
+`;
