@@ -162,6 +162,13 @@ export const CustomColor = Template.bind({})
  *****************************************************************************/
 export const WeightedText = Template.bind({})
 
+/******************************************************************************
+ * Can be customized without limits passing CSS properties via "css" prop.
+ * @returns {ReactElement<HTMLSpanElement>} Span element containing the
+ * text "Base text like paragraphs and data displayed on tables"
+ *****************************************************************************/
+export const CustomCSS = Template.bind({})
+
 Paragraph.args = {
   element: 'paragraph'
 }
@@ -172,4 +179,11 @@ CustomColor.args = {
 
 WeightedText.args = {
   weight: 700
+}
+
+CustomCSS.args = {
+  css: {
+    opacity: 0.4,
+    textDecoration: 'underline'
+  }
 }

@@ -1,10 +1,11 @@
+import { CSSProperties } from 'react'
 import { Color } from '../_types'
 import { CSSinJS, TextSize, TextType } from '../_types/global'
 
 /******************************************************************************
  * @param {string} children String containing the text to be rendered.
  * @param {Color} color Specify color of text.
- * @param {CSSinJS} css Css properties to add.
+ * @param {CSSProperties} css Css properties to add.
  * @param {'span' | 'paragraph' | 'heading'} element Specify type of element
  * that will wrap text.
  * @param {TextSize} size Natural number (can be negative) representing scale of
@@ -15,7 +16,7 @@ import { CSSinJS, TextSize, TextType } from '../_types/global'
 export type TextProps = {
   children: string
   color?: Color
-  css?: CSSinJS
+  css?: CSSProperties
   element?: 'span' | 'paragraph' | 'heading'
   size?: TextSize
   weight?: CSSinJS['fontWeight']

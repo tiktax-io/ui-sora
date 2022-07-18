@@ -1,5 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Text CSS Properties can be passed as props 1`] = `
+<span
+  className="default-0-2-1"
+  css={
+    Object {
+      "opacity": 0.4,
+      "textDecoration": "underline",
+    }
+  }
+  style={
+    Object {
+      "color": undefined,
+      "fontWeight": "normal",
+      "opacity": 0.4,
+      "textDecoration": "underline",
+    }
+  }
+>
+  My custom text
+</span>
+`;
+
 exports[`Text Can customize color via props 1`] = `
 <span
   className="default-0-2-1"

@@ -70,6 +70,7 @@ const Text = memo(forwardRef((props: TextProps, ref: LegacyRef<TextType>):
     className: classes.default,
     ref: ref,
     style: {
+      ...css,
       color: color,
       fontWeight: weight
     }

@@ -32,4 +32,18 @@ describe('Text', () => {
     expect(tree).toMatchSnapshot()
   })
 
+  test('CSS Properties can be passed as props', () => {
+    const customCSS = {
+      opacity: 0.4,
+      textDecoration: 'underline'  
+    }
+    const tree = renderer
+      .create(
+        <Text css={customCSS}>My custom text</Text>
+      )
+      .toJSON()
+    
+    expect(tree).toMatchSnapshot()
+  })
+
 })
