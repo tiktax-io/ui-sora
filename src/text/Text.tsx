@@ -9,7 +9,7 @@ import { TextProps } from './Text.types'
 /******************************************************************************
  * @param {string} children String containing the text to be rendered.
  * @param {Color} color Specify color of text.
- * @param {CSSinJS} css Css properties to add.
+ * @param {CSSProperties} css Css properties to add.
  * @param {TextProps['element']} element HTML element that will wrap text.
  * @param {TextSize} size Natural number (can be negative) representing scale
  * of the font. 0 is the base size, -1 is one size smaller than base, 1 is one
