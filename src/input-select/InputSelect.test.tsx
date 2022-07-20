@@ -32,6 +32,19 @@ describe('InputSelect input select element', () => {
     expect(element).toBeInTheDocument()
   })
 
+  test('A label can be specified via \'label\' prop.', () => {
+    const inputSelectProps: InputSelectProps = {
+      label: 'My custom label',
+      onChange: () => null,
+      options: ['one', 'two', 'three']
+    }
+    render(
+      <InputSelect {...inputSelectProps} />
+    )
+    const element = screen.getByText(/My custom label/i)
+    expect(element).toBeInTheDocument()
+  })
+
   test('Can be customised via props named \"css\".', () => {
     const inputSelectProps: InputSelectProps = {
       css: {

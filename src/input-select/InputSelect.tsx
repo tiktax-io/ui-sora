@@ -11,6 +11,7 @@ import { InputSelectProps, SelectAttributes } from './InputSelect.types'
  * @param {string} [dataTestId] id of the container element to be
  * used on tests as a way to query the component.
  * @param {string} defaultValue the default option selected on render.
+ * @param {string} label label title of the input.
  * @property {(value: string) => unknown | void} onChange action to
  * trigger when the selected option has been updated.
  * @param {Array<SelectOption>} options options of input of type select.
@@ -19,6 +20,7 @@ import { InputSelectProps, SelectAttributes } from './InputSelect.types'
 const InputSelect = memo(forwardRef(({
   css,
   dataTestId,
+  label,
   onChange,
   options,
   defaultValue = options[0]
@@ -26,10 +28,10 @@ const InputSelect = memo(forwardRef(({
   const classes = useStyles()
 
   /****************************************************************************
-   * HTML attributes and props to be passed to Top parent div element.
+   * HTML attributes and props to be passed to input box.
    ***************************************************************************/
-  const containerProps: HTMLProps<HTMLDivElement> = {
-    className: classes.container,
+  const inputBoxProps: HTMLProps<HTMLDivElement> = {
+    className: classes.inputBox,
     ref: ref,
     style: css
   }
@@ -63,14 +65,17 @@ const InputSelect = memo(forwardRef(({
   }
 
   return (
-    <div {...containerProps}>
-      <select {...selectProps}>
-        {options.map((option: string, i) => (
-          <option key={i} {...getOptionAttributes(option)}>
-            {option}
-          </option>
-        ))}
-      </select>
+    <div className={classes.container}>
+      {label && <span className={classes.label}>{label}</span>}
+      <div {...inputBoxProps}>
+        <select {...selectProps}>
+          {options.map((option: string, i) => (
+            <option key={i} {...getOptionAttributes(option)}>
+              {option}
+            </option>
+          ))}
+        </select>
+      </div>
     </div>
   )
 }))

@@ -57,6 +57,7 @@ const Minimal: ComponentStory<typeof InputSelect> = (args: any) =>
 export const Default = Template.bind({})
 export const CustomCSS = Minimal.bind({})
 export const CustomDefaultValue = Minimal.bind({})
+export const WithLabel = Minimal.bind({})
 
 /******************************************************************************
  * Variants with different storybook control options below
@@ -85,6 +86,15 @@ CustomCSS.args = {
  *****************************************************************************/
 CustomDefaultValue.args = {
   defaultValue: 'second',
+  onChange: () => null,
+  options: ['first', 'second', 'third']
+}
+
+/******************************************************************************
+ * @returns {ReactElement} InputSelect component with label specified.
+ *****************************************************************************/
+WithLabel.args = {
+  label: 'Select custom label',
   onChange: () => null,
   options: ['first', 'second', 'third']
 }

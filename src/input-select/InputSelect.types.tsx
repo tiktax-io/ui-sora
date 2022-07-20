@@ -6,6 +6,7 @@ import { CSSProperties, HTMLProps } from 'react'
  * @param {string} [dataTestId] id of the container element to be
  * used on tests as a way to query the component.
  * @property {string} defaultValue the default option selected on render.
+ * @param {string} label label title of the input.
  * @property {(value: string) => unknown | void} onChange action to trigger
  * when the selected option has been updated.
  * @property {Array<string>} options options of input of type select.
@@ -14,6 +15,7 @@ export type InputSelectProps = {
   css?: CSSProperties
   dataTestId?: string
   defaultValue?: string
+  label?: string
   onChange: (value: string) => unknown | void
   options: Array<string>
 }
