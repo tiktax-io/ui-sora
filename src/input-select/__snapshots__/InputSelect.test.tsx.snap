@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputSelect input select element Can be customised via props named "css". 1`] = `
+<div
+  className="container-0-2-1"
+  style={
+    Object {
+      "background": "red",
+    }
+  }
+>
+  <select
+    className="select-0-2-2"
+    id="coins"
+    onChange={[Function]}
+    value="one"
+  >
+    <option
+      className="option-0-2-3"
+      value="one"
+    >
+      one
+    </option>
+    <option
+      className="option-0-2-3"
+      value="two"
+    >
+      two
+    </option>
+    <option
+      className="option-0-2-3"
+      value="three"
+    >
+      three
+    </option>
+  </select>
+</div>
+`;
+
+exports[`InputSelect input select element Default component matches snapshot. 1`] = `
+<div
+  className="container-0-2-1"
+>
+  <select
+    className="select-0-2-2"
+    id="coins"
+    onChange={[Function]}
+    value="test"
+  >
+    <option
+      className="option-0-2-3"
+      value="test"
+    >
+      test
+    </option>
+    <option
+      className="option-0-2-3"
+      value="snapshot"
+    >
+      snapshot
+    </option>
+  </select>
+</div>
+`;
