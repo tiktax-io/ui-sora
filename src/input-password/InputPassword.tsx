@@ -85,7 +85,7 @@ const InputPassword = memo(forwardRef(({
 
   return (
     <div {...containerAttributes}>
-      {label && <span className={classes.label}>{label}</span>}
+      {label && <label className={classes.label}>{label}</label>}
       <span {...inputWrapperAttributes}>
         <input {...inputAttributes} />
         <span {...iconContainerAttributes}>

@@ -42,7 +42,6 @@ export const useStyles = createUseStyles({
     color: shadeColor(black, 0.75),
     fontFamily: fontFamily,
     fontSize: typography_scale[3],
-    fontWeight: 600,
-    marginBottom: '10px'
+    fontWeight: 600
   }
 })

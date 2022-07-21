@@ -66,7 +66,7 @@ const InputSelect = memo(forwardRef(({
 
   return (
     <div className={classes.container}>
-      {label && <span className={classes.label}>{label}</span>}
+      {label && <label className={classes.label}>{label}</label>}
       <div {...inputBoxProps}>
         <select {...selectProps}>
           {options.map((option: string, i) => (
