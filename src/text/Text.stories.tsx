@@ -21,6 +21,9 @@ export default {
   }
 } as ComponentMeta<typeof Text>
 
+/******************************************************************************
+ * Object containing strings as values with demo text.
+ *****************************************************************************/
 const demoText: {[index: number | string]: string} = {
   5: 'Landing header call to action',
   4: 'Exceptional titles except landing cta',
@@ -33,6 +36,8 @@ const demoText: {[index: number | string]: string} = {
   [-3]: 'Legal conditions that are not necessary to display on normal size'
 }
 
+const loreIpsumText = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.'
+
 const ScaleTemplate: ComponentStory<typeof Text> = () => {
   const style = {
     container: {
@@ -40,11 +45,11 @@ const ScaleTemplate: ComponentStory<typeof Text> = () => {
       flexDirection: 'row',
       flexWrap: 'wrap',
       fontFamily: fontFamily,
-      fontSize: `${typography_base * 0.192857143}vmin`,
+      fontSize: typography_base,
       gap: '20px',
       height: '100%',
       left: 0,
-      maxWidth: '1000px',
+      maxWidth: '1200px',
       top: 0,
       width: '100%'
     },
@@ -94,9 +99,6 @@ const ScaleTemplate: ComponentStory<typeof Text> = () => {
           em
         </div>
         <div className={classes.measureUnit}>
-          vmin
-        </div>
-        <div className={classes.measureUnit}>
           px
         </div>
       </div>
@@ -114,9 +116,6 @@ const ScaleTemplate: ComponentStory<typeof Text> = () => {
             {Math.pow(typography_ratio, 5 - i).toFixed(2)}
           </div>
           <div className={classes.measureUnit}>
-            {(typography_base * 0.192857143  * (Math.pow(typography_ratio, 5 - i))).toFixed(2)}
-          </div>
-          <div className={classes.measureUnit}>
             {(typography_base * (Math.pow(typography_ratio, 5 - i))).toFixed(2)}
           </div>
         </div>
@@ -128,6 +127,11 @@ const ScaleTemplate: ComponentStory<typeof Text> = () => {
 const Template: ComponentStory<typeof Text> = (args: TextProps) =>
   <Text {...args}>
     {demoText[args.size || 0]}
+  </Text>
+
+const ParagraphTemplate: ComponentStory<typeof Text> = (args: TextProps) =>
+  <Text {...args}>
+    {loreIpsumText}
   </Text>
 
 /******************************************************************************
@@ -148,7 +152,7 @@ export const Default = Template.bind({})
  * @returns {ReactElement<HTMLParagraphElement>} Paragraph element containing
  * the text "Base text like paragraphs and data displayed on tables"
  *****************************************************************************/
-export const Paragraph = Template.bind({})
+export const Paragraph = ParagraphTemplate.bind({})
 
 /******************************************************************************
  * Specified the color of the text
