@@ -33,7 +33,7 @@ export interface CustomHTMLAttributes {
 
 declare namespace React {
   interface HTMLAttributes<T> extends AriaAttributes, DOMAttributes<T> {
-    'data-testid': string
+    'data-testid'?: string
   }
 }
 

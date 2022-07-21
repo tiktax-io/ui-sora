@@ -66,7 +66,7 @@ const InputText = memo(forwardRef(({
 
   return (
     <div {...containerAttributes}>
-      {label && <span className={classes.label}>{label}</span>}
+      {label && <label className={classes.label}>{label}</label>}
       <input {...inputAttributes} />
       {(isInvalid || isValid) && <span {...spanFeedbackMessageAttributes}>
         <Icon {...feedbackIconProps} />

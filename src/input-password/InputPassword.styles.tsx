@@ -59,10 +59,6 @@ export const useStyles = createUseStyles({
     ...inputGlobalStyles.container,
     alignItems: 'center',
     border: `1px solid ${hexToRGB(black, 0.1)}`,
-    '&:focus-within': {
-      border: `1px solid ${hexToRGB(primary, 1)}`,
-      boxShadow: `0px 0px 7px 8px ${hexToRGB(primary, 0.25)}`,
-    },
     display: 'flex',
     paddingLeft: '0px',
     paddingRight: '0px'
@@ -71,7 +67,6 @@ export const useStyles = createUseStyles({
     color: shadeColor(black, 0.75),
     fontFamily: fontFamily,
     fontSize: typography_scale[3],
-    fontWeight: 600,
-    marginBottom: '10px'
+    fontWeight: 600
   }
 })

@@ -34,11 +34,6 @@ export const useStyles = createUseStyles({
     border: `1px solid ${hexToRGB(black, 0.1)}`,
     letterSpacing: '0.23px',
     width: '100%',
-    '&:focus': {
-      border: `1px solid ${hexToRGB(primary, 1)}`,
-      boxShadow: `0px 0px 7px 8px ${hexToRGB(primary, 0.25)}`,
-      outline: 'none'
-    },
     '&::placeholder': {
       color: shadeColor(black, 0.33)
     }
@@ -47,7 +42,6 @@ export const useStyles = createUseStyles({
     color: shadeColor(black, 0.75),
     fontFamily: fontFamily,
     fontSize: typography_scale[3],
-    fontWeight: 600,
-    marginBottom: '10px'
+    fontWeight: 600
   }
 })
