@@ -1,4 +1,4 @@
-import { CSSProperties } from 'react'
+import { CSSProperties, HTMLProps } from 'react'
 import { Color } from '../_types'
 import { CSSinJS, TextSize, TextType } from '../_types/global'
 
@@ -21,3 +21,15 @@ export type TextProps = {
   size?: TextSize
   weight?: CSSinJS['fontWeight']
 }
+
+/******************************************************************************
+ * Attributes to pass as a second parameter of React.createElement method when
+ * creating Text component.
+ *****************************************************************************/
+export type NewElementAttributes =
+  HTMLProps<HTMLSpanElement | HTMLHeadingElement | HTMLParagraphElement>
+
+/******************************************************************************
+ * Text element tag value as a string.
+ *****************************************************************************/
+export type ElementTag = 'span' | 'p' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'

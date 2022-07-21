@@ -1,10 +1,10 @@
-import React, { createElement, DetailedReactHTMLElement, forwardRef, HTMLAttributes, LegacyRef, memo, ReactElement } from 'react'
+import React, { createElement, DetailedReactHTMLElement, forwardRef, HTMLAttributes, HTMLProps, LegacyRef, memo, ReactElement } from 'react'
 import { typography_base, typography_ratio } from '../_styles'
 import { Color } from '../_types'
 import { CSSinJS, TextSize, TextType } from '../_types/global'
 
 import { useStyles } from './Text.styles'
-import { TextProps } from './Text.types'
+import { ElementTag, NewElementAttributes, TextProps } from './Text.types'
 
 /******************************************************************************
  * @param {string} children String containing the text to be rendered.
@@ -65,7 +65,7 @@ const Text = memo(forwardRef((props: TextProps, ref: LegacyRef<TextType>):
         : size > 1
           ? getHeadingElement(size)
           : 'span'
-  
+
   /****************************************************************************
    * Gets the size specified on props and returns the appropiate default
    * font-weight property for that text.
@@ -78,35 +78,28 @@ const Text = memo(forwardRef((props: TextProps, ref: LegacyRef<TextType>):
       : 'normal'
   }
 
-  /****************************************************************************
-   * Gets the size specified on props and returns the appropiate default
-   * font-size property for that text.
-   * @param {TextProps['size']} size prop passed to Text component.
-   * @returns font-size property value.
-   ***************************************************************************/
-  const getTypoSize = (size: number, unit: 'px' | 'vmin') => {
-    const baseVmin = typography_base * 0.192857143 // '2.7vmin'
-    const fontSizeViewPort = `${
-      (baseVmin * (Math.pow(typography_ratio, size))).toFixed(2)
-    }vmin`
-    const fontSizeInPixels = `${
-      (typography_base * (Math.pow(typography_ratio, size))).toFixed(2)
-    }px`
-    
-    return unit === 'px' ? fontSizeInPixels : fontSizeViewPort
-  }
-
-  const attributes = {
-    className: classes.default,
+  /******************************************************************************
+   * @type {NewElementAttributes} Attributes to pass on createElement method.
+   * @property {string} className of JSS style object used.
+   * @property {LegacyRef<TextType>} ref ref forwarded from parent element.
+   * @property {CSSinJS} style object containing extra css of the component.
+   *****************************************************************************/
+  const attributes: NewElementAttributes = {
+    className: classes[size],
     ref: ref,
     style: {
-      ...css,
+      textAlign: element === 'paragraph' ? 'justify' : 'start',
       color: color,
-      fontSize: getTypoSize(size, 'vmin'),
       fontWeight: weight || getWeight(size),
+      ...css
     }
   }
-  const htmlElement = getElement(element)
+
+  /******************************************************************************
+   * @type {ElementTag} The tag of the element as a string. Example: 'h1'.
+   *****************************************************************************/
+  const htmlElement: ElementTag = getElement(element)
+
   return createElement(htmlElement, attributes, children)
 }))
 

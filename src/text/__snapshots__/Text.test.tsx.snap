@@ -2,13 +2,13 @@
 
 exports[`Text CSS Properties can be passed as props 1`] = `
 <span
-  className="default-0-2-1"
+  className="0-0-2-1"
   style={
     Object {
       "color": undefined,
-      "fontSize": "2.70vmin",
       "fontWeight": "normal",
       "opacity": 0.4,
+      "textAlign": "start",
       "textDecoration": "underline",
     }
   }
@@ -19,12 +19,12 @@ exports[`Text CSS Properties can be passed as props 1`] = `
 
 exports[`Text Can customize color via props 1`] = `
 <span
-  className="default-0-2-1"
+  className="0-0-2-1"
   style={
     Object {
       "color": "#F45B69",
-      "fontSize": "2.70vmin",
       "fontWeight": "normal",
+      "textAlign": "start",
     }
   }
 >
@@ -35,24 +35,24 @@ exports[`Text Can customize color via props 1`] = `
 exports[`Text Can specify font-size via props 1`] = `
 Array [
   <h4
-    className="default-0-2-1"
+    className="2-0-2-3"
     style={
       Object {
         "color": undefined,
-        "fontSize": "4.22vmin",
         "fontWeight": 700,
+        "textAlign": "start",
       }
     }
   >
     My custom text
   </h4>,
   <h3
-    className="default-0-2-1"
+    className="3-0-2-4"
     style={
       Object {
         "color": undefined,
-        "fontSize": "5.27vmin",
         "fontWeight": 700,
+        "textAlign": "start",
       }
     }
   >
@@ -63,12 +63,12 @@ Array [
 
 exports[`Text Can specify weight via props 1`] = `
 <span
-  className="default-0-2-1"
+  className="0-0-2-1"
   style={
     Object {
       "color": undefined,
-      "fontSize": "2.70vmin",
       "fontWeight": 700,
+      "textAlign": "start",
     }
   }
 >
