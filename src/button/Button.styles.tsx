@@ -17,6 +17,9 @@ const blackShadow = hexToRGB(black, 0.05)
 const commonStyles = {
   container: {
     ...inputGlobalStyles.container,
+    '&:focus-within': {
+      outline: 'none'
+    },
     cursor: 'pointer'
   },
   label: {

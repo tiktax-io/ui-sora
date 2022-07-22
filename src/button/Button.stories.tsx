@@ -2,7 +2,7 @@ import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 import Button from './Button'
-import { ThemeProvider } from 'react-jss'
+import { createUseStyles, ThemeProvider } from 'react-jss'
 
 export default {
   title: 'Atoms/Button',
@@ -32,6 +32,25 @@ const customTheme = {
 
 const Template: ComponentStory<typeof Button> = (args: any) => <Button {...args} />
 
+const ByAppearanceTemplate: ComponentStory<typeof Button> = (args: any) => {
+  const styles = {
+    container: {
+      display: 'flex',
+      gap: '40px'
+    }
+  }
+  const useStyles = createUseStyles(styles)
+  const classes = useStyles()
+  return (
+    <div className={classes.container}>
+      <Button appearance='default'>Default</Button>
+      <Button appearance='primary'>Primary</Button>
+      <Button appearance='success'>Success</Button>
+      <Button appearance='danger'>Danger</Button>
+    </div>
+  )
+}
+
 const Custom: ComponentStory<typeof Button> = (args: any) => (
   <div style={{ alignItems: 'center', display: 'flex', gap: '20px' }}>
     <ThemeProvider theme={customTheme}>
@@ -42,6 +61,7 @@ const Custom: ComponentStory<typeof Button> = (args: any) => (
   </div>
 )
 
+export const ByAppearance = ByAppearanceTemplate.bind({})
 export const Default = Template.bind({})
 export const Primary = Template.bind({})
 export const Success = Template.bind({})
@@ -73,3 +93,4 @@ Disabled.args = {
   children: 'Disabled',
   disabled: true
 }
+
