@@ -12,8 +12,8 @@ import { CSSProperties, HTMLProps } from 'react'
  * @property {boolean} isValid true if the input will display a success status.
  * @property {string} value the default option selected on render.
  * @property {string} label label title of the input.
- * @property {(value: string) => unknown | void} onChange action to trigger when
- * the selected option has been updated.
+ * @property {(value: string) => unknown | void} onChange action to trigger
+ * when the selected option has been updated.
  * @property {string} min oldest date available in range: 'YYYY-MM-DD'.
  * @property {string} max oldest date available in rangE: 'YYYY-MM-DD'.
  * @property {number} step integer number representing days.
@@ -26,9 +26,9 @@ export type InputDateProps = {
   isInvalid?: boolean
   isValid?: boolean
   label?: string
-  min?: number
-  max?: number
-  onChange: (value: string) => unknown | void
+  min?: string
+  max?: string
+  onChange: (value: any) => unknown | void
   step?: number
   value?: string
 }

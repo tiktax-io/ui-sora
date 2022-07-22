@@ -14,6 +14,10 @@ const Template: ComponentStory<typeof InputDate> =
 export const Default = Template.bind({})
 export const InvalidDate = Template.bind({})
 export const SuccessFeedback = Template.bind({})
+export const WithDefaultValue = Template.bind({})
+export const WithDateRange = Template.bind({})
+export const WithStep = Template.bind({})
+export const CustomCSS = Template.bind({})
 
 InvalidDate.args = {
   isInvalid: true,
@@ -32,17 +36,29 @@ SuccessFeedback.args = {
   label: 'Date'
 }
 
-/* Primary.parameters = {
-  backgrounds: { default: 'dark' }
+WithDefaultValue.args = {
+  label: 'Date',
+  value: '2022-07-22'
 }
 
-Primary.args = {
-  label: 'InputDate',
-  variant: InputDateVariants.primary
+WithDateRange.args = {
+  label: 'Date',
+  min: '2022-07-22',
+  max: '2022-07-29',
+  value: '2022-07-24'
 }
 
-export const Secondary = Template.bind({})
-Secondary.args = {
-  label: 'InputDate',
-  variant: InputDateVariants.secondary
-} */
+WithStep.args = {
+  label: 'Date',
+  step: 7,
+  value: '2022-07-18'
+}
+
+CustomCSS.args = {
+  css: {
+    background: 'red',
+    color: 'yellow'
+  },
+  onChange: () => null,
+  value: '1990-01-19'
+}

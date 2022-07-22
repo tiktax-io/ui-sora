@@ -50,15 +50,21 @@ const InputDate = memo(forwardRef(({
   /****************************************************************************
    * HTML attributes and props to be passed to input box.
    ***************************************************************************/
-  const inputProps: HTMLProps<HTMLInputElement> = {
+  const inputProps = {
     className: classes.inputBox,
+    'data-testid': dataTestId,
+    max: max,
+    min: min,
+    onChange: onChange,
     placeholder: 'hey',
     ref: ref,
+    step: step,
     style: {
       ...isInvalid ? isInvalidStyle : isValid ? isValidStyle : null,
       ...css
     },
-    type: 'date'
+    type: 'date',
+    value: value
   }
 
   const spanFeedbackMessageAttributes = {
