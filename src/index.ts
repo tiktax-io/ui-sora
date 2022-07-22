@@ -7,8 +7,9 @@
 // Atoms Components
 export { default as Button } from './button/Button'
 export { default as Icon } from './icon/Icon'
-export { default as InputText } from './input-text/InputText'
+export { default as InputDate } from './input-date/InputDate'
 export { default as InputSelect } from './input-select/InputSelect'
+export { default as InputText } from './input-text/InputText'
 export { default as Tab } from './tab/Tab'
 export { default as Text } from './text/Text'
 
