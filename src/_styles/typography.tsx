@@ -1,5 +1,5 @@
 export const typography_ratio = 1.25
-export const typography_base = 16
+export const typography_base = 14
 export const fontFamily = '"Inter", sans-serif'
 
 /******************************************************************************
