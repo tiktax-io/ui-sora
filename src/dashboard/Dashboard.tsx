@@ -44,16 +44,20 @@ const Dashboard = memo(forwardRef(function({
   }
 
   return (
-    <div {...containerProps}>
+    <>
       <Navbar {...allNavbarProps} />
-      {renderSidebar &&
-      <aside>
-        {sidebarChildren}
-      </aside>}
-      <main>
-        {children}
-      </main>
-    </div>
+      <div {...containerProps}>
+        <div className={classes.content}>
+          {renderSidebar &&
+          <aside>
+            {sidebarChildren}
+          </aside>}
+          <main>
+            {children}
+          </main>
+        </div>
+      </div>
+    </>
   )
 }))
 

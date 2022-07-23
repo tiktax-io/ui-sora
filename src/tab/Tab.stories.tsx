@@ -20,7 +20,7 @@ const container = {
   flexDirection: columnDirection,
   gap: 15,
   marginTop: '65px',
-  padding: '40px 20px',
+  padding: '40px 20px 40px 0',
   width: '280px'
 }
 
