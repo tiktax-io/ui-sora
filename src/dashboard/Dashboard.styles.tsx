@@ -4,10 +4,17 @@ const styles = {
   container: {
     display: 'flex',
     height: '100%',
+    justifyContent: 'center',
     left: 0,
     position: 'absolute',
     top: 0,
-    width: '100%',
+    width: '100%'
+  },
+  content: {
+    display: 'flex',
+    height: '100%',
+    maxWidth: '1460px',
+    width: '95%',
     '& aside': {
       flex: '0 0 320px',
       height: '100%',
