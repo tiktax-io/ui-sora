@@ -1,4 +1,4 @@
-import { CSSProperties, HTMLProps } from 'react'
+import { CSSProperties } from 'react'
 
 /******************************************************************************
  * Functional component that renders an input of type "date" element.

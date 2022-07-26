@@ -1,6 +1,6 @@
 import { Theme } from '../../_types'
 import { hexToRGB, shadeColor } from '../../_utils/colors'
-import { black, danger, greyNeutral, primary, success } from '../colors'
+import { black, danger, greyNeutral, success } from '../colors'
 import { inputGlobalStyles } from '../inputs'
 import { fontFamily, typography_base, typography_scale } from '../typography'
 
@@ -20,12 +20,12 @@ const darkDefault: Theme = {
       border: `1px solid ${hexToRGB('#ffffff', 0.5)}`,
       transition: [['background', '300ms'], ['width', '300ms']],
       '&:hover': {
-        background: shadeColor(black, 0.8)
+        background: shadeColor(black, 0.8),
       },
       '&:active': {
         boxShadow: `0px 0px 7px 8px ${blackTint}`
       },
-      '&:focus': {
+      '&:focus-within': {
         boxShadow: `0px 0px 7px 8px ${blackTint}`
       },
       '& span': {
@@ -43,12 +43,15 @@ const darkDefault: Theme = {
       boxShadow: `0px 4px 10px 3px ${successShadow}`,
       transition: [['background', '300ms'], ['width', '300ms']],
       '&:hover': {
-        background: shadeColor(success, 1.2)
+        background: shadeColor(success, 1.2),
+        '& span': {
+          color: 'white'  
+        }
       },
       '&:active': {
         boxShadow: `0px 0px 7px 8px ${successShadow}`
       },
-      '&:focus': {
+      '&:focus-within': {
         boxShadow: `0px 0px 7px 8px ${successShadow}`
       },
       '& span': {
@@ -66,12 +69,16 @@ const darkDefault: Theme = {
       boxShadow: `0px 4px 10px 3px ${dangerShadow}`,
       transition: [['background', '300ms'], ['width', '300ms']],
       '&:hover': {
-        background: shadeColor(danger, 1.2)
+        background: shadeColor(danger, 1.2),
+        color: 'white',
+        '& span': {
+          color: 'white'  
+        }
       },
       '&:active': {
         boxShadow: `0px 0px 7px 8px ${dangerShadow}`
       },
-      '&:focus': {
+      '&:focus-within': {
         boxShadow: `0px 0px 7px 8px ${dangerShadow}`
       },
       '& span': {
@@ -106,6 +113,17 @@ const darkDefault: Theme = {
       }
     }  
   },
+  InputText: {
+    container: {
+      background: 'red'
+    },
+    label: {
+      color: shadeColor(black, 0.75),
+      fontFamily: fontFamily,
+      fontSize: typography_scale[3],
+      fontWeight: 600
+    }
+  },
   Navbar: {
     container: {
       alignItems: 'center',
@@ -113,7 +131,7 @@ const darkDefault: Theme = {
       borderBottom: `1px solid ${passiveBlack}`,
       color: darkText,
       display: 'flex',
-      gap: 40,
+      gap: '40px',
       height: '65px',
       justifyContent: 'center',
       left: 0,
@@ -125,7 +143,7 @@ const darkDefault: Theme = {
       alignItems: 'center',
       color: darkText,
       display: 'flex',
-      gap: 40,
+      gap: '40px',
       height: '100%',
       maxWidth: '1460px',
       width: '95%'
@@ -143,7 +161,7 @@ const darkDefault: Theme = {
       fontFamily: fontFamily,
       fontSize: typography_base,
       fontWeight: 700,
-      gap: 20,
+      gap: '20px',
       height: '40px',
       paddingLeft: '5%',
       paddingRight: '5%',
@@ -169,7 +187,7 @@ const darkDefault: Theme = {
       fontFamily: fontFamily,
       fontSize: typography_base,
       fontWeight: 700,
-      gap: 20,
+      gap: '20px',
       height: '40px',
       paddingLeft: '5%',
       paddingRight: '5%',

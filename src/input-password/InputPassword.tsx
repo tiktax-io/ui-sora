@@ -25,6 +25,7 @@ import { InputPasswordProps } from './InputPassword.types'
  * and feedback message below.
  *****************************************************************************/
 const InputPassword = memo(forwardRef(({
+  css,
   dataTestId,
   feedbackMessage,
   isInvalid,
@@ -54,6 +55,7 @@ const InputPassword = memo(forwardRef(({
   }
   const iconContainerAttributes = {
     className: classes.iconContainer,
+    style: css,
     'data-testid': `${dataTestId}IconContainer`,
     onClick: () => setPasswordIsHiddenState(!passwordIsHiddenState),
   }

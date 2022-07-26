@@ -1,4 +1,4 @@
-import React, { forwardRef, LegacyRef, memo } from 'react'
+import React, { ChangeEvent, forwardRef, LegacyRef, memo } from 'react'
 import Icon from '../icon/Icon'
 import { IconProps } from '../icon/Icon.types'
 import { danger, success } from '../_styles'
@@ -16,8 +16,9 @@ import { InputTextProps } from './InputText.types'
  * @param {boolean} isInvalid true if the input will display an error status.
  * @param {boolean} isValid true if the input will display a success status.
  * @param {string} label label title of the input.
- * @param {() => unknown} onChange function to trigger when input value changes.
- * @param {string} placeholder string used as placeholder for user instructions.
+ * @param {onChange?: (value: string) => unknown} onChange function to trigger
+ * when input value changes.
+ * @param {string} placeholder string passed to HTML input placeholder.
  * @param {string} value the string value of the input for controlled forms.
  * @param {number} width integer representing the width in pixels.
  * @returns {ReactElement} Div containing text input, optionally label above,
@@ -35,27 +36,34 @@ const InputText = memo(forwardRef(({
   width = 200
 }: InputTextProps, ref?: LegacyRef<HTMLDivElement>) => {
   const classes = useStyles()
+
   const containerAttributes = {
     'data-testid': dataTestId,
     ref: ref,
     className: classes.container,
     style: { width: `${width}px` }
   }
+
   const inputAttributes = {
     className: classes.inputElement,
     'data-testid': `${dataTestId}Input`,
-    onChange: onChange,
+    onChange: (event: ChangeEvent<HTMLInputElement>) => {
+      event.preventDefault()
+      onChange && onChange((event?.target as HTMLInputElement)?.value || '')
+    },
     placeholder: placeholder,
     style: isInvalid ? isInvalidStyle : isValid ? isValidStyle : {},
     type: 'text',
     value: value
   }
+
   const feedbackIconProps: IconProps = {
     color: isInvalid ? danger : success,
     height: 16,
     icon: isInvalid ? 'danger' : 'success',
     width: 16
   }
+
   const spanFeedbackMessageAttributes = {
     className: classes.feedbackMessageContainer,
     'data-testid': `${dataTestId}SpanFeedbackMessage`,

@@ -1,4 +1,8 @@
+import { CSSProperties } from 'react'
+
 /******************************************************************************
+ * @property {CSSProperties} css CSS properties to add to the div wrapping the
+ * element.
  * @param {string} [dataTestId] id of the container element to be
  * used on tests as a way to query the component.
  * @param {string} feedbackMessage validation message to display below the
@@ -13,6 +17,7 @@
  * @param {number} width integer representing the width in pixels.
  *****************************************************************************/
  export type InputPasswordProps = {
+  css?: CSSProperties
   dataTestId?: string
   feedbackMessage?: string
   isInvalid?: boolean

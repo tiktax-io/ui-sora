@@ -1,6 +1,7 @@
 import { createUseStyles } from 'react-jss'
-import { black, danger, fontFamily, inputGlobalStyles, primary, success, typography_scale } from '../_styles'
+import { black, danger, fontFamily, inputGlobalStyles, success, typography_scale } from '../_styles'
 import { hexToRGB, shadeColor } from '../_utils/colors'
+import { InputTextStyles } from './InputText.types'
 
 export const isInvalidStyle = {
   border: `1px solid ${danger}`,
@@ -12,7 +13,7 @@ export const isValidStyle = {
   boxShadow: `0px 4px 10px 3px ${hexToRGB(success, 0.25)}`
 }
 
-export const useStyles = createUseStyles({
+export const style: InputTextStyles = {
   container: {
     display: 'flex',
     flexDirection: 'row',
@@ -44,4 +45,8 @@ export const useStyles = createUseStyles({
     fontSize: typography_scale[3],
     fontWeight: 600
   }
-})
+}
+
+export const useStyles = createUseStyles(
+  (theme) => ({ ...style, ...theme.InputText })
+)

@@ -1,4 +1,4 @@
-import { AriaAttributes, ButtonHTMLAttributes, DetailedHTMLProps, DOMAttributes } from 'react'
+import { AriaAttributes, ButtonHTMLAttributes, CSSProperties, DetailedHTMLProps, DOMAttributes } from 'react'
 import { CSSinJS } from './global'
 
 type RGB = `rgb(${number}, ${number}, ${number})`
@@ -17,6 +17,13 @@ export interface Theme {
   Dashboard?: {
     container?: CSSinJS
   }
+  InputText?: {
+    container?: CSSinJS
+    feedbackMessageContainer?: CSSinJS
+    feedbackMessageText?: CSSinJS
+    inputElement?: CSSinJS
+    label?: CSSinJS
+  },
   Navbar?: {
     container?: CSSinJS
     content?: CSSinJS

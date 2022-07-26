@@ -19,11 +19,13 @@ export type CSSinJS = {
   fontFamily?: string
   fontSize?: string | number
   fontWeight?: 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | 'normal' | 'bold' | 'bolder' | 'lighter'
-  gap?: number
+  gap?: string
   height?: string
   justifyContent?: string
   left?: number
+  letterSpacing?: string
   maxWidth?: string
+  outline?: string
   padding?: string
   paddingLeft?: string
   paddingRight?: string
@@ -31,12 +33,14 @@ export type CSSinJS = {
   top?: number
   transition?: Array<Array<string>>
   width?: string
+  '&:active'?: CSSinJS
   '& aside'?: CSSinJS
+  '&:focus'?: CSSinJS
+  '&:focus-within'?: CSSinJS
+  '&:hover'?: CSSinJS
   '& main'?: CSSinJS
-  '&:hover'?: any
-  '&:active'?: any
-  '&:focus'?: any
-  '& span'?: any
+  '&::placeholder'?: CSSinJS
+  '& span'?: CSSinJS
 }
 
 declare global {
@@ -51,6 +55,13 @@ declare global {
       Dashboard?: {
         container?: CSSinJS
       }
+      InputText?: {
+        container?: CSSinJS
+        feedbackMessageContainer?: CSSinJS
+        feedbackMessageText?: CSSinJS
+        inputElement?: CSSinJS
+        label?: CSSinJS
+      }    
       Navbar?: {
         container?: CSSinJS
         content?: CSSinJS
