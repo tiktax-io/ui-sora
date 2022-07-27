@@ -9,6 +9,8 @@ import { InputTextProps } from './InputText.types'
 /******************************************************************************
  * Functional Component that renders a text input completed with label and
  * optional validation styles and message.
+ * @property {CSSProperties} css CSS properties to add to the div wrapping the
+ * element.
  * @param {string} [dataTestId] id of the container element to be
  * used on tests as a way to query the component.
  * @param {string} feedbackMessage validation message to display below the
@@ -25,6 +27,7 @@ import { InputTextProps } from './InputText.types'
  * and feedback message below.
  *****************************************************************************/
 const InputText = memo(forwardRef(({
+  css,
   dataTestId,
   feedbackMessage,
   isInvalid,
@@ -37,13 +40,21 @@ const InputText = memo(forwardRef(({
 }: InputTextProps, ref?: LegacyRef<HTMLDivElement>) => {
   const classes = useStyles()
 
+  /****************************************************************************
+   * Attributes passed to top div element wrapping the component.
+   * @property {string} dataTestId string to identify by id on tests.
+   ***************************************************************************/
   const containerAttributes = {
+    className: classes.container,
     'data-testid': dataTestId,
     ref: ref,
-    className: classes.container,
-    style: { width: `${width}px` }
+    style: { width: `${width}px`, ...css }
   }
 
+  /****************************************************************************
+   * Attributes passed input HTML element.
+   * @property {string} dataTestId string to identify by id on tests.
+   ***************************************************************************/
   const inputAttributes = {
     className: classes.inputElement,
     'data-testid': `${dataTestId}Input`,
@@ -57,13 +68,22 @@ const InputText = memo(forwardRef(({
     value: value
   }
 
-  const feedbackIconProps: IconProps = {
+  /****************************************************************************
+   * Attributes passed to Icon component displayed below input on feedback.
+   * @property {Color} color string as Color
+   * @property {string} dataTestId string to identify by id on tests.
+   ***************************************************************************/
+   const feedbackIconProps: IconProps = {
     color: isInvalid ? danger : success,
     height: 16,
     icon: isInvalid ? 'danger' : 'success',
     width: 16
   }
 
+/******************************************************************************
+ * Attributes passed to HTML Span element containing the feedback message.
+ * @property {string} dataTestId string to identify by id on tests.
+ *****************************************************************************/
   const spanFeedbackMessageAttributes = {
     className: classes.feedbackMessageContainer,
     'data-testid': `${dataTestId}SpanFeedbackMessage`,

@@ -3,6 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 import InputText from './InputText'
 import Text from '../text/Text'
+import { primary } from '../_styles'
 
 export default {
   title: 'Atoms/InputText',
@@ -52,6 +53,7 @@ export const Minimal = Template.bind({})
 export const WithLabel = Template.bind({})
 export const Invalid = Template.bind({})
 export const WithSuccessFeedback = Template.bind({})
+export const CustomCSSProps = Template.bind({})
 
 const commonArgs = {
   onChange: () => console.log('key pressed'),
@@ -87,5 +89,15 @@ WithSuccessFeedback.args = {
   ...commonArgs,
   isValid: true,
   feedbackMessage: 'Optional successful feedback',
+  value: 'My custom input'
+}
+
+CustomCSSProps.args = {
+  ...commonArgs,
+  css: {
+    background: primary,
+    fontFamily: '\'Roboto Mono\', monospace'
+  },
+  label: 'Customized via \'css\' prop',
   value: 'My custom input'
 }

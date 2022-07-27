@@ -1,15 +1,4 @@
-import { CSSinJS } from '../_types/global'
-
-/******************************************************************************
- * Type definitions for component InputText
- *****************************************************************************/
-export type InputTextStyles = {
-  container: CSSinJS
-  feedbackMessageContainer: CSSinJS
-  feedbackMessageText: CSSinJS
-  inputElement: CSSinJS
-  label: CSSinJS
-}
+import { CSSProperties } from 'react'
 
 /******************************************************************************
  * @property {CSSProperties} css CSS properties to add to the div wrapping the
@@ -28,6 +17,7 @@ export type InputTextStyles = {
  * @param {number} width integer representing the width in pixels.
  *****************************************************************************/
 export type InputTextProps = {
+  css?: CSSProperties
   dataTestId?: string
   feedbackMessage?: string
   isInvalid?: boolean

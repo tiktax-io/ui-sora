@@ -8,6 +8,7 @@
 export { default as Button } from './button/Button'
 export { default as Icon } from './icon/Icon'
 export { default as InputDate } from './input-date/InputDate'
+export { default as InputPassword } from './input-date/InputDate'
 export { default as InputSelect } from './input-select/InputSelect'
 export { default as InputText } from './input-text/InputText'
 export { default as Tab } from './tab/Tab'

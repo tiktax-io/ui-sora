@@ -1,7 +1,6 @@
 import { createUseStyles } from 'react-jss'
 import { black, danger, fontFamily, inputGlobalStyles, success, typography_scale } from '../_styles'
 import { hexToRGB, shadeColor } from '../_utils/colors'
-import { InputTextStyles } from './InputText.types'
 
 export const isInvalidStyle = {
   border: `1px solid ${danger}`,
@@ -13,7 +12,7 @@ export const isValidStyle = {
   boxShadow: `0px 4px 10px 3px ${hexToRGB(success, 0.25)}`
 }
 
-export const style: InputTextStyles = {
+export const style = {
   container: {
     display: 'flex',
     flexDirection: 'row',
