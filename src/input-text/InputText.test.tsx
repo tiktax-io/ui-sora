@@ -3,6 +3,8 @@ import { render, screen } from '@testing-library/react'
 import renderer from 'react-test-renderer'
 import InputText from './InputText'
 import { InputTextProps } from './InputText.types'
+import SoraTheme from '../sora-theme/SoraTheme'
+import darkDefault from '../_styles/official_themes/dark_default'
 
 describe('InputText component', () => {
 
@@ -86,6 +88,35 @@ describe('InputText component', () => {
     const tree = renderer
       .create(
         <InputText {...props}/>
+      )
+      .toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+
+  test('Styles are customized if wrapped by SoraTheme', () => {
+    render(
+      <div style={{ alignItems: 'center', display: 'flex', gap: '20px' }}>
+        <SoraTheme theme={darkDefault}>
+          <InputText dataTestId='customized' />
+        </SoraTheme>
+        <InputText dataTestId='default1' />
+        <InputText dataTestId='default2' />
+      </div>
+    )
+    const CustomInput = screen.getByTestId('customized').getAttribute('class')
+    const Default1 = screen.getByTestId('default1').getAttribute('class')
+    const Default2 = screen.getByTestId('default2').getAttribute('class')
+    expect(Default1).toMatch(`${Default2}`)
+    expect(CustomInput).not.toMatch(`${Default1}`)
+    expect(CustomInput).not.toMatch(`${Default2}`)
+  })
+
+  test('Customized via SoraTheme matches snapshot', () => {
+    const tree = renderer
+      .create(
+        <SoraTheme theme={darkDefault}>
+          <InputText />
+        </SoraTheme>
       )
       .toJSON()
     expect(tree).toMatchSnapshot()

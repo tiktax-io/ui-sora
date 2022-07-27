@@ -3,6 +3,9 @@ import { fireEvent, render, screen } from '@testing-library/react'
 import renderer from 'react-test-renderer'
 import InputPassword from './InputPassword'
 import { InputPasswordProps } from './InputPassword.types'
+import SoraTheme from '../sora-theme/SoraTheme'
+import { mockTheme } from '../_mock_'
+import { darkDefaultTheme } from '..'
 
 describe('InputPassword component', () => {
 
@@ -103,6 +106,35 @@ describe('InputPassword component', () => {
     const tree = renderer
       .create(
         <InputPassword {...props}/>
+      )
+      .toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+
+  test('Styles are customized if wrapped by SoraTheme', () => {
+    render(
+      <div style={{ alignItems: 'center', display: 'flex', gap: '20px' }}>
+        <SoraTheme theme={darkDefaultTheme}>
+          <InputPassword dataTestId='customized' />
+        </SoraTheme>
+        <InputPassword dataTestId='default1' />
+        <InputPassword dataTestId='default2' />
+      </div>
+    )
+    const CustomInput = screen.getByTestId('customized').getAttribute('class')
+    const Default1 = screen.getByTestId('default1').getAttribute('class')
+    const Default2 = screen.getByTestId('default2').getAttribute('class')
+    expect(Default1).toMatch(`${Default2}`)
+    expect(CustomInput).not.toMatch(`${Default1}`)
+    expect(CustomInput).not.toMatch(`${Default2}`)
+  })
+
+  test('Customized via SoraTheme matches snapshot', () => {
+    const tree = renderer
+      .create(
+        <SoraTheme theme={darkDefaultTheme}>
+          <InputPassword />
+        </SoraTheme>
       )
       .toJSON()
     expect(tree).toMatchSnapshot()

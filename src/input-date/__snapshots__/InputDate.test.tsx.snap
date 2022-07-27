@@ -1,21 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`InputDate component Can be customised via props named "css". 1`] = `
+exports[`InputDate component Customized via SoraTheme matches snapshot 1`] = `
 <div
-  className="container-0-2-1"
+  className="container-0-2-6"
 >
   <input
-    className="inputBox-0-2-4"
+    className="inputBox-0-2-9"
     onChange={[Function]}
     placeholder="hey"
-    style={
-      Object {
-        "background": "red",
-        "color": "yellow",
-      }
-    }
+    style={Object {}}
     type="date"
-    value="1990-01-19"
   />
 </div>
 `;
@@ -127,6 +121,26 @@ exports[`InputDate component Input with labels matched expected styles 1`] = `
     placeholder="hey"
     style={Object {}}
     type="date"
+  />
+</div>
+`;
+
+exports[`InputDate component Wrapper div be customised via props named "css". 1`] = `
+<div
+  className="container-0-2-1"
+>
+  <input
+    className="inputBox-0-2-4"
+    onChange={[Function]}
+    placeholder="hey"
+    style={
+      Object {
+        "background": "red",
+        "color": "yellow",
+      }
+    }
+    type="date"
+    value="1990-01-19"
   />
 </div>
 `;

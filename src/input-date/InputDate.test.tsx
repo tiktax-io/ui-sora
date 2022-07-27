@@ -3,6 +3,10 @@ import { fireEvent, render, screen } from '@testing-library/react'
 import InputDate from './InputDate'
 import { InputDateProps } from './InputDate.types'
 import renderer from 'react-test-renderer'
+import { mockTheme } from '../_mock_'
+import { ThemeProvider } from 'react-jss'
+import SoraTheme from '../sora-theme/SoraTheme'
+import darkDefault from '../_styles/official_themes/dark_default'
 
 describe('InputDate component', () => {
 
@@ -177,7 +181,7 @@ describe('InputDate component', () => {
     expect(element).toHaveValue('1990-01-18')
   })
 
-  test('Can be customised via props named \"css\".', () => {
+  test('Wrapper div be customised via props named \"css\".', () => {
     const props: InputDateProps = {
       css: {
         background: 'red',
@@ -189,6 +193,41 @@ describe('InputDate component', () => {
     const tree = renderer
       .create(
         <InputDate {...props} />
+      )
+      .toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+
+  test('Styles are customized if wrapped by SoraTheme', () => {
+    const props: InputDateProps = {
+      onChange: () => null
+    }
+    render(
+      <div style={{ alignItems: 'center', display: 'flex', gap: '20px' }}>
+        <SoraTheme theme={darkDefault}>
+          <InputDate dataTestId='customized' {...props} />
+        </SoraTheme>
+        <InputDate dataTestId='default1' {...props} />
+        <InputDate dataTestId='default2' {...props} />
+      </div>
+    )
+    const CustomInputDate = screen.getByTestId('customized').getAttribute('class')
+    const Default1 = screen.getByTestId('default1').getAttribute('class')
+    const Default2 = screen.getByTestId('default2').getAttribute('class')
+    expect(Default1).toMatch(`${Default2}`)
+    expect(CustomInputDate).not.toMatch(`${Default1}`)
+    expect(CustomInputDate).not.toMatch(`${Default2}`)
+  })
+
+  test('Customized via SoraTheme matches snapshot', () => {
+    const props: InputDateProps = {
+      onChange: () => null
+    }
+    const tree = renderer
+      .create(
+        <SoraTheme theme={darkDefault}>
+          <InputDate {...props} />
+        </SoraTheme>
       )
       .toJSON()
     expect(tree).toMatchSnapshot()

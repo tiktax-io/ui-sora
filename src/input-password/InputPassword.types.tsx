@@ -10,7 +10,7 @@ import { CSSProperties } from 'react'
  * @param {boolean} isInvalid true if the input will display an error status.
  * @param {boolean} isValid true if the input will display a success status.
  * @param {string} label label title of the input.
- * @param {() => unknown} onChange function to trigger when input value changes.
+ * @param {(value?: string) => unknown} onChange function to trigger when input value changes.
  * @param {boolean} passwordIsHidden true by default. False to show password.
  * @param {string} placeholder string used as placeholder for user instructions.
  * @param {string} value the string value of the input for controlled forms.
@@ -23,7 +23,7 @@ import { CSSProperties } from 'react'
   isInvalid?: boolean
   isValid?: boolean
   label?: string
-  onChange?: () => unknown
+  onChange?: (value?: string) => unknown
   passwordIsHidden?: boolean
   placeholder?: string
   value?: string

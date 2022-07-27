@@ -12,7 +12,7 @@ export const isValidStyle = {
   boxShadow: `0px 4px 10px 3px ${hexToRGB(success, 0.25)}`
 }
 
-export const useStyles = createUseStyles({
+export const style = {
   container: {
     display: 'flex',
     flexDirection: 'row',
@@ -69,4 +69,8 @@ export const useStyles = createUseStyles({
     fontSize: typography_scale[3],
     fontWeight: 600
   }
-})
+}
+
+export const useStyles = createUseStyles(
+  (theme) => ({ ...style, ...theme.InputPassword })
+)

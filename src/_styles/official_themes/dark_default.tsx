@@ -1,7 +1,8 @@
 import { Theme } from '../../_types'
 import { hexToRGB, shadeColor } from '../../_utils/colors'
-import { black, danger, greyNeutral, success } from '../colors'
+import { black, danger, greyNeutral, success, text } from '../colors'
 import { inputGlobalStyles } from '../inputs'
+import { spacing_scale } from '../misc'
 import { fontFamily, typography_base, typography_scale } from '../typography'
 
 const successShadow = hexToRGB(success, 0.25)
@@ -112,6 +113,46 @@ const darkDefault: Theme = {
         width: '100%'
       }
     }  
+  },
+  InputDate: {
+    container: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '10px',
+      width: 'fit-content'
+    },
+    feedbackMessageContainer: {
+      alignItems: 'center',
+      display: 'flex',
+      gap: '10px'
+    },
+    feedbackMessageText: {
+      fontFamily: fontFamily,
+      fontSize: typography_scale[2],
+      letterSpacing: '0.23px'
+    },
+    inputBox: {
+      ...inputGlobalStyles.container,
+      background: 'inherit',
+      border: `1px solid ${hexToRGB(black, 0.1)}`,
+      color: shadeColor(black, 0.25),
+      cursor: 'text',
+      outline: 'none',
+      paddingLeft: `${spacing_scale[1]}px`,
+      paddingRight: `${spacing_scale[1]}px`,
+      width: 'fit-content',
+      '&:focus-within': {
+        ...inputGlobalStyles.container['&:focus-within'],
+        background: shadeColor(black, 0.8),
+        color: 'white'
+      }
+    },
+    label: {
+      color: shadeColor(black, 0.25),
+      fontFamily: fontFamily,
+      fontSize: typography_scale[3],
+      fontWeight: 600
+    }
   },
   InputText: {
     container: {

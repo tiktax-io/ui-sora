@@ -1,5 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`InputText component Customized via SoraTheme matches snapshot 1`] = `
+<div
+  className="container-0-2-6"
+  style={
+    Object {
+      "width": "200px",
+    }
+  }
+>
+  <input
+    className="inputElement-0-2-9"
+    data-testid="undefinedInput"
+    onChange={[Function]}
+    style={Object {}}
+    type="text"
+  />
+</div>
+`;
+
 exports[`InputText component Default InputText styles matches snapshot 1`] = `
 <div
   className="container-0-2-1"

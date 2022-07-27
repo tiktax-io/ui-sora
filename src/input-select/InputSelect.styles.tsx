@@ -3,7 +3,7 @@ import { black, fontFamily, inputGlobalStyles, text, typography_scale } from '..
 import { spacing_scale } from '../_styles/misc'
 import { hexToRGB, shadeColor } from '../_utils/colors'
 
-export const useStyles = createUseStyles({
+export const style = {
   container: {
     display: 'flex',
     flexDirection: 'column',
@@ -45,4 +45,8 @@ export const useStyles = createUseStyles({
     background: 'white',
     color: text
   }
-})
+}
+
+export const useStyles = createUseStyles(
+  (theme) => ({ ...style, ...theme.InputSelect })
+)

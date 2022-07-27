@@ -1,4 +1,4 @@
-import React, { forwardRef, LegacyRef, memo, useState } from 'react'
+import React, { ChangeEvent, forwardRef, LegacyRef, memo, useState } from 'react'
 import Icon from '../icon/Icon'
 import { IconProps } from '../icon/Icon.types'
 import { black, danger, success } from '../_styles'
@@ -68,7 +68,10 @@ const InputPassword = memo(forwardRef(({
   const inputAttributes = {
     className: classes.inputElement,
     'data-testid': `${dataTestId}Input`,
-    onChange: onChange,
+    onChange: (event: ChangeEvent<HTMLInputElement>) => {
+      event.preventDefault()
+      onChange && onChange((event?.target as HTMLInputElement)?.value || '')
+    },    
     placeholder: placeholder,
     type: passwordIsHiddenState ? 'password' : 'text',
     value: value

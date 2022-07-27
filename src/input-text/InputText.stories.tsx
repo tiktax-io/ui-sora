@@ -28,7 +28,7 @@ const ControlledInput: FC = () => {
   }
 
   const uncontrolledProps = {
-    label: 'This text input is controlled',
+    label: 'This text input is uncontrolled',
     placeholder: 'Uncontrolled'
   }
 

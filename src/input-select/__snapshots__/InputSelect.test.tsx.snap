@@ -41,6 +41,36 @@ exports[`InputSelect input select element Can be customised via props named "css
 </div>
 `;
 
+exports[`InputSelect input select element Customized via SoraTheme matches snapshot 1`] = `
+<div
+  className="container-0-2-6"
+>
+  <div
+    className="inputBox-0-2-7"
+  >
+    <select
+      className="select-0-2-9"
+      id="coins"
+      onChange={[Function]}
+      value="a"
+    >
+      <option
+        className="option-0-2-10"
+        value="a"
+      >
+        a
+      </option>
+      <option
+        className="option-0-2-10"
+        value="b"
+      >
+        b
+      </option>
+    </select>
+  </div>
+</div>
+`;
+
 exports[`InputSelect input select element Default component matches snapshot. 1`] = `
 <div
   className="container-0-2-1"

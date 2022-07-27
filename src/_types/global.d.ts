@@ -11,7 +11,7 @@ export type CSSinJS = {
   borderRadius?: string
   boxShadow?: string
   color?: Color | string
-  cursor?: 'help' | 'wait' | 'crosshair' | 'not-allowed' | 'zoom-in' | 'grab' | 'pointer'
+  cursor?: 'help' | 'wait' | 'crosshair' | 'not-allowed' | 'zoom-in' | 'grab' | 'pointer' | 'text'
   display?: 'flex' | 'block' | 'inline' | 'inline-block' | 'grid' | 'inline-grid'
   flex?: string
   flexDirection?: FlexDirection
@@ -61,7 +61,34 @@ declare global {
         feedbackMessageText?: CSSinJS
         inputElement?: CSSinJS
         label?: CSSinJS
-      }    
+      }
+      InputDate?: {
+        container?: CSSinJS
+        feedbackMessageContainer?: CSSinJS
+        feedbackMessageText?: CSSinJS
+        inputBox?: CSSinJS
+        label?: CSSinJS
+      }
+      InputPassword?: {
+        container?: CSSinJS
+        feedbackMessageContainer?: CSSinJS
+        feedbackMessageText?: CSSinJS
+        inputElement?: CSSinJS
+        iconContainer?: CSSinJS
+        /**********************************************************************
+         * inputWrapper is the span element wrapping the HTML Input with the
+         * "visibility" toggle icon. It doesn't exist on InputText component.
+         *********************************************************************/
+        inputWrapper?: CSSinJS
+        label?: CSSinJS
+      }
+      InputSelect?: {
+        container?: CSSinJS
+        inputBox?: CSSinJS
+        label?: CSSinJS
+        option?: CSSinJS
+        select?: CSSinJS
+      }
       Navbar?: {
         container?: CSSinJS
         content?: CSSinJS

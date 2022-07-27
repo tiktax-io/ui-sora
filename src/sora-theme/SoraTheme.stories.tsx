@@ -12,6 +12,8 @@ import { shadeColor } from '../_utils/colors'
 import { black } from '../_styles'
 import { NavbarProps } from '../navbar/Navbar.types'
 import { SidebarWithTabs } from '../tab/Tab.stories'
+import InputDate from '../input-date/InputDate'
+import { mockInputDateProps } from '../_mock_'
 
 export default {
   title: '_Customization/SoraTheme',
@@ -103,10 +105,22 @@ const TabTemplate: ComponentStory<typeof SoraTheme> =
   )
 }
 
+const InputDateTemplate: ComponentStory<typeof SoraTheme> =
+  (args: SoraThemeProps) => {
+  return (
+    <div>
+      <SoraTheme {...args}>
+        <InputDate {...mockInputDateProps} />
+      </SoraTheme>
+    </div>
+  )
+}
+
 export const DarkButtons = ButtonTemplate.bind({})
 export const DarkNavbar = NavbarTemplate.bind({})
 export const DarkDashboard = DashboardTemplate.bind({})
 export const DarkTabs = TabTemplate.bind({})
+export const DarkInputDate = InputDateTemplate.bind({})
 
 DarkButtons.parameters = {
   backgrounds: { default: 'dark' }
@@ -134,4 +148,12 @@ DarkTabs.args = {
 
 DarkTabs.parameters = {
   backgrounds: { default: 'dark' }
+}
+
+DarkInputDate.parameters = {
+  backgrounds: { default: 'dark' }
+}
+
+DarkInputDate.args = {
+  theme: darkDefault
 }
