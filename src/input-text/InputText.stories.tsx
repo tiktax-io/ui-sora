@@ -56,6 +56,7 @@ export const Invalid = Template.bind({})
 export const WithSuccessFeedback = Template.bind({})
 export const CustomCSSProps = Template.bind({})
 export const ReadOnly = Template.bind({})
+export const Disabled = Template.bind({})
 
 const commonArgs = {
   onChange: () => console.log('key pressed'),
@@ -109,5 +110,12 @@ ReadOnly.args = {
   label: 'Read only',
   placeholder: 'Custom placeholder',
   readOnly: true,
+  value: 'Can only be read'
+}
+
+Disabled.args = {
+  disabled: true,
+  label: 'Read only',
+  placeholder: 'Custom placeholder',
   value: 'Can only be read'
 }

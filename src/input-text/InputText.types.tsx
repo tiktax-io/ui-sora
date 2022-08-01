@@ -5,6 +5,7 @@ import { CSSProperties } from 'react'
  * element.
  * @param {string} [dataTestId] id of the container element to be
  * used on tests as a way to query the component.
+ * @param {boolean} disabled HTML attribute of disabled input.
  * @param {string} feedbackMessage validation message to display below the
  * input field.
  * @param {boolean} isInvalid true if the input will display an error status.
@@ -20,6 +21,7 @@ import { CSSProperties } from 'react'
 export type InputTextProps = {
   css?: CSSProperties
   dataTestId?: string
+  disabled?: boolean
   feedbackMessage?: string
   isInvalid?: boolean
   isValid?: boolean

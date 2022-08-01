@@ -13,6 +13,7 @@ import { InputTextProps } from './InputText.types'
  * element.
  * @param {string} [dataTestId] id of the container element to be
  * used on tests as a way to query the component.
+ * @param {boolean} [disabled] HTML attribute of disabled input.
  * @param {string} feedbackMessage validation message to display below the
  * input field.
  * @param {boolean} isInvalid true if the input will display an error status.
@@ -29,6 +30,7 @@ import { InputTextProps } from './InputText.types'
 const InputText = memo(forwardRef(({
   css,
   dataTestId,
+  disabled,
   feedbackMessage,
   isInvalid,
   isValid,
@@ -62,6 +64,7 @@ const InputText = memo(forwardRef(({
   const inputAttributes = {
     className: classes.inputElement,
     'data-testid': dataTestId && `${dataTestId}Input`,
+    disabled: disabled,
     onChange: (event: ChangeEvent<HTMLInputElement>) => {
       event.preventDefault()
       onChange && onChange((event?.target as HTMLInputElement)?.value || '')

@@ -147,4 +147,29 @@ describe('InputText component', () => {
     expect(element).toHaveAttribute('readonly')
   })
 
+  test('Disabled input matches snapshot', () => {
+    const props = {
+      disabled: true,
+      value: 'Can only be read'
+    }
+    const tree = renderer
+      .create(
+        <InputText {...props}/>
+      )
+      .toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+
+  test('\'disabled\' attribute can be passed as prop from parent', () => {
+    const props = {
+      dataTestId: 'disabled-props-works',
+      disabled: true
+    }
+    render(
+      <InputText {...props}/>
+    )
+    const element = screen.getByTestId('disabled-props-worksInput')
+    expect(element).toHaveAttribute('disabled')
+  })
+
 })

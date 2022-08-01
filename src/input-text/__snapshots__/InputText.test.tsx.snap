@@ -37,6 +37,26 @@ exports[`InputText component Default InputText styles matches snapshot 1`] = `
 </div>
 `;
 
+exports[`InputText component Disabled input matches snapshot 1`] = `
+<div
+  className="container-0-2-1"
+  style={
+    Object {
+      "width": "200px",
+    }
+  }
+>
+  <input
+    className="inputElement-0-2-4"
+    disabled={true}
+    onChange={[Function]}
+    style={Object {}}
+    type="text"
+    value="Can only be read"
+  />
+</div>
+`;
+
 exports[`InputText component InputText with successful feedback styles matches snapshot 1`] = `
 <div
   className="container-0-2-1"
