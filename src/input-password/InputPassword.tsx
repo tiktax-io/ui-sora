@@ -1,4 +1,4 @@
-import React, { ChangeEvent, forwardRef, LegacyRef, memo, useState } from 'react'
+import React, { ChangeEvent, forwardRef, KeyboardEvent, LegacyRef, memo, useState } from 'react'
 import Icon from '../icon/Icon'
 import { IconProps } from '../icon/Icon.types'
 import { black, danger, success } from '../_styles'
@@ -70,8 +70,15 @@ const InputPassword = memo(forwardRef(({
     'data-testid': `${dataTestId}Input`,
     onChange: (event: ChangeEvent<HTMLInputElement>) => {
       event.preventDefault()
-      onChange && onChange((event?.target as HTMLInputElement)?.value || '')
-    },    
+      const withoutSpaces = (event?.target as HTMLInputElement)
+        ?.value
+        ?.replace(' ', '')
+      onChange && onChange(withoutSpaces || '')
+    },
+    onKeyDown: (event: KeyboardEvent<HTMLInputElement>): void => {
+      if (event.code === 'Space') event.preventDefault()
+      console.log(event)
+    },
     placeholder: placeholder,
     type: passwordIsHiddenState ? 'password' : 'text',
     value: value

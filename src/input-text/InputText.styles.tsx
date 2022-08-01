@@ -1,5 +1,5 @@
 import { createUseStyles } from 'react-jss'
-import { black, danger, fontFamily, inputGlobalStyles, success, typography_scale } from '../_styles'
+import { black, danger, fontFamily, inputGlobalStyles, success, text, typography_scale } from '../_styles'
 import { hexToRGB, shadeColor } from '../_utils/colors'
 
 export const isInvalidStyle = {
@@ -10,6 +10,12 @@ export const isInvalidStyle = {
 export const isValidStyle = {
   border: `1px solid ${success}`,
   boxShadow: `0px 4px 10px 3px ${hexToRGB(success, 0.25)}`
+}
+
+export const readOnlyStyle = {
+  inputElement: {
+    color: shadeColor(text, 0.5)
+  }
 }
 
 export const style = {

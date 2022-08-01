@@ -13,6 +13,7 @@ import { CSSProperties } from 'react'
  * @param {onChange?: (value: string) => unknown} onChange function to trigger
  * when input value changes.
  * @param {string} placeholder string used as placeholder for user instructions.
+ * @param {boolean} readOnly
  * @param {string} value the string value of the input for controlled forms.
  * @param {number} width integer representing the width in pixels.
  *****************************************************************************/
@@ -25,6 +26,7 @@ export type InputTextProps = {
   label?: string
   onChange?: (value: string) => unknown
   placeholder?: string
+  readOnly?: boolean
   value?: string
   width?: number
 }

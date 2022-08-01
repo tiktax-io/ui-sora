@@ -58,7 +58,7 @@
     "build": "yarn lint && yarn upgrade && rollup -c",
     "build-watch": "rollup -c -w",
     "component": "node node_modules/@tonisanchez.dev/init-component './src'",
-    "storybook": "start-storybook -p 6006",
+    "sb": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "publish": "npm publish && yarn remove-builds -- dist es && npm publish publish",
     "publish-pkg": "npm publish && yarn remove-builds -- dist es && npm publish publish",

@@ -4,7 +4,6 @@ import renderer from 'react-test-renderer'
 import InputPassword from './InputPassword'
 import { InputPasswordProps } from './InputPassword.types'
 import SoraTheme from '../sora-theme/SoraTheme'
-import { mockTheme } from '../_mock_'
 import { darkDefaultTheme } from '..'
 
 describe('InputPassword component', () => {
@@ -139,5 +138,20 @@ describe('InputPassword component', () => {
       .toJSON()
     expect(tree).toMatchSnapshot()
   })
+
+  /* Currently test is not working, Github and Stackoverflow is a rabbit hole,
+  there's seems to be a bug with @testing-library/react
+  test('Blank spaces are not added as Password input', () => {
+    const props = {
+      dataTestId: 'testingTrim'
+    }
+    render(<InputPassword {...props}/>)
+    const element = screen.getByTestId('testingTrimInput')
+    element.focus()
+    fireEvent.keyDown(element, { key: 'a', code: 'keyA', keyCode: 65 })
+    fireEvent.keyDown(element, { key: ' ', code: 'Space', keyCode: 32 })
+    fireEvent.keyDown(element, { key: 'a', code: 'keyA', keyCode: 65 })
+    expect(element).toHaveDisplayValue('aa')
+  }) */
 
 })

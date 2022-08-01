@@ -122,4 +122,29 @@ describe('InputText component', () => {
     expect(tree).toMatchSnapshot()
   })
 
+  test('Readonly input matches snapshot', () => {
+    const props = {
+      readOnly: true,
+      value: 'Can only be read'
+    }
+    const tree = renderer
+      .create(
+        <InputText {...props}/>
+      )
+      .toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+
+  test('\'readOnly\' attribute can be passed as prop from parent', () => {
+    const props = {
+      dataTestId: 'readOnly-props-works',
+      readOnly: true
+    }
+    render(
+      <InputText {...props}/>
+    )
+    const element = screen.getByTestId('readOnly-props-worksInput')
+    expect(element).toHaveAttribute('readonly')
+  })
+
 })

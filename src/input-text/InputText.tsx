@@ -3,7 +3,7 @@ import Icon from '../icon/Icon'
 import { IconProps } from '../icon/Icon.types'
 import { danger, success } from '../_styles'
 
-import { isInvalidStyle, isValidStyle, useStyles } from './InputText.styles'
+import { isInvalidStyle, isValidStyle, readOnlyStyle, style, useStyles } from './InputText.styles'
 import { InputTextProps } from './InputText.types'
 
 /******************************************************************************
@@ -35,6 +35,7 @@ const InputText = memo(forwardRef(({
   label,
   onChange,
   placeholder,
+  readOnly,
   value,
   width = 200
 }: InputTextProps, ref?: LegacyRef<HTMLDivElement>) => {
@@ -48,7 +49,10 @@ const InputText = memo(forwardRef(({
     className: classes.container,
     'data-testid': dataTestId,
     ref: ref,
-    style: { width: `${width}px`, ...css }
+    style: {
+      width: `${width}px`,
+      ...css
+    }
   }
 
   /****************************************************************************
@@ -57,13 +61,17 @@ const InputText = memo(forwardRef(({
    ***************************************************************************/
   const inputAttributes = {
     className: classes.inputElement,
-    'data-testid': `${dataTestId}Input`,
+    'data-testid': dataTestId && `${dataTestId}Input`,
     onChange: (event: ChangeEvent<HTMLInputElement>) => {
       event.preventDefault()
       onChange && onChange((event?.target as HTMLInputElement)?.value || '')
     },
     placeholder: placeholder,
-    style: isInvalid ? isInvalidStyle : isValid ? isValidStyle : {},
+    readOnly: readOnly,
+    style: {
+      ...(isInvalid ? isInvalidStyle : isValid ? isValidStyle : {}),
+      ...(readOnly ? readOnlyStyle.inputElement : null)
+    },
     type: 'text',
     value: value
   }
@@ -73,20 +81,20 @@ const InputText = memo(forwardRef(({
    * @property {Color} color string as Color
    * @property {string} dataTestId string to identify by id on tests.
    ***************************************************************************/
-   const feedbackIconProps: IconProps = {
+  const feedbackIconProps: IconProps = {
     color: isInvalid ? danger : success,
     height: 16,
     icon: isInvalid ? 'danger' : 'success',
     width: 16
   }
 
-/******************************************************************************
- * Attributes passed to HTML Span element containing the feedback message.
- * @property {string} dataTestId string to identify by id on tests.
- *****************************************************************************/
+  /****************************************************************************
+   * Attributes passed to HTML Span element containing the feedback message.
+   * @property {string} dataTestId string to identify by id on tests.
+   ***************************************************************************/
   const spanFeedbackMessageAttributes = {
     className: classes.feedbackMessageContainer,
-    'data-testid': `${dataTestId}SpanFeedbackMessage`,
+    'data-testid': dataTestId && `${dataTestId}SpanFeedbackMessage`,
     style: {
       color: isInvalid ? danger : success
     }

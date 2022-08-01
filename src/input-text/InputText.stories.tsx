@@ -4,6 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import InputText from './InputText'
 import Text from '../text/Text'
 import { primary } from '../_styles'
+import { InputTextProps } from './InputText.types'
 
 export default {
   title: 'Atoms/InputText',
@@ -15,19 +16,19 @@ export default {
  * props as on InputTextProps.
  *****************************************************************************/
 const Template: ComponentStory<typeof InputText> =
-  (args: any) => <InputText {...args} />
+  (args: InputTextProps) => <InputText {...args} />
 
 const ControlledInput: FC = () => {
   const [myValue, setMyValue] = useState('')
 
-  const controlledProps = {
+  const controlledProps: InputTextProps = {
     label: 'This text input is controlled',
     onChange: (newValue: string) => setMyValue(newValue),
     placeholder: 'Controlled',
     value: myValue
   }
 
-  const uncontrolledProps = {
+  const uncontrolledProps: InputTextProps = {
     label: 'This text input is uncontrolled',
     placeholder: 'Uncontrolled'
   }
@@ -54,6 +55,7 @@ export const WithLabel = Template.bind({})
 export const Invalid = Template.bind({})
 export const WithSuccessFeedback = Template.bind({})
 export const CustomCSSProps = Template.bind({})
+export const ReadOnly = Template.bind({})
 
 const commonArgs = {
   onChange: () => console.log('key pressed'),
@@ -66,6 +68,7 @@ AllProps.args = {
   isInvalid: false,
   isValid: false,
   label: 'Test all props',
+  readOnly: false,
   value: ''
 }
 
@@ -100,4 +103,11 @@ CustomCSSProps.args = {
   },
   label: 'Customized via \'css\' prop',
   value: 'My custom input'
+}
+
+ReadOnly.args = {
+  label: 'Read only',
+  placeholder: 'Custom placeholder',
+  readOnly: true,
+  value: 'Can only be read'
 }
