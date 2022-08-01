@@ -3,7 +3,7 @@ import Icon from '../icon/Icon'
 import { IconProps } from '../icon/Icon.types'
 import { black, danger, success } from '../_styles'
 
-import { isInvalidStyle, isValidStyle, useStyles } from './InputPassword.styles'
+import { disabledStyle, isInvalidStyle, isValidStyle, readOnlyStyle, useStyles } from './InputPassword.styles'
 import { InputPasswordProps } from './InputPassword.types'
 
 /******************************************************************************
@@ -11,14 +11,15 @@ import { InputPasswordProps } from './InputPassword.types'
  * optional validation styles and message.
  * @param {string} [dataTestId] id of the container element to be
  * used on tests as a way to query the component.
+ * @param {boolean} [disabled] HTML attribute of disabled input.
  * @param {string} feedbackMessage validation message to display below the
  * input field.
  * @param {boolean} isInvalid true if the input will display an error status.
  * @param {boolean} isValid true if the input will display a success status.
  * @param {string} label label title of the input.
  * @param {() => unknown} onChange function to trigger when input value changes.
- * @param {boolean} passwordIsHidden true by default. False to show password.
  * @param {string} placeholder string used as placeholder for user instructions.
+ * @param {boolean} readOnly HTML attribute of readonly input.
  * @param {string} value the string value of the input for controlled forms.
  * @param {number} width integer representing the width in pixels.
  * @returns {ReactElement} Div containing text input, optionally label above,
@@ -27,47 +28,55 @@ import { InputPasswordProps } from './InputPassword.types'
 const InputPassword = memo(forwardRef(({
   css,
   dataTestId,
+  disabled,
   feedbackMessage,
   isInvalid,
   isValid,
   label,
   onChange,
-  passwordIsHidden = true,
   placeholder,
+  readOnly,
   value,
   width = 200
 }: InputPasswordProps, ref?: LegacyRef<HTMLDivElement>) => {
   const classes = useStyles()
   const [passwordIsHiddenState, setPasswordIsHiddenState] =
-    useState<boolean>(passwordIsHidden)
+    useState<boolean>(true)
 
   const containerAttributes = {
     'data-testid': dataTestId,
     ref: ref,
     className: classes.container,
-    style: { width: `${width}px` }
+    style: {
+      width: `${width}px`,
+      ...css
+    }
   }
+
   const feedbackIconProps: IconProps = {
     color: isInvalid ? danger : success,
     height: 16,
     icon: isInvalid ? 'danger' : 'success',
     width: 16
   }
+
   const iconContainerAttributes = {
     className: classes.iconContainer,
-    style: css,
     'data-testid': `${dataTestId}IconContainer`,
     onClick: () => setPasswordIsHiddenState(!passwordIsHiddenState),
   }
+
   const iconProps: IconProps = {
     color: black,
     height: 14,
     icon: passwordIsHiddenState ? 'hide' : 'show',
     width: 18
   }
+
   const inputAttributes = {
     className: classes.inputElement,
     'data-testid': `${dataTestId}Input`,
+    disabled: disabled,
     onChange: (event: ChangeEvent<HTMLInputElement>) => {
       event.preventDefault()
       const withoutSpaces = (event?.target as HTMLInputElement)
@@ -80,13 +89,22 @@ const InputPassword = memo(forwardRef(({
       console.log(event)
     },
     placeholder: placeholder,
+    readOnly: readOnly,
+    style: {
+      ...(readOnly ? readOnlyStyle.inputElement : null)
+    },
     type: passwordIsHiddenState ? 'password' : 'text',
     value: value
   }
+
   const inputWrapperAttributes = {
     className: classes.inputWrapper,
-    style: isInvalid ? isInvalidStyle : isValid ? isValidStyle : {}
+    style: {
+      ...(isInvalid ? isInvalidStyle : isValid ? isValidStyle : {}),
+      ...(disabled && disabledStyle)
+    }
   }
+
   const spanFeedbackMessageAttributes = {
     className: classes.feedbackMessageContainer,
     'data-testid': `${dataTestId}SpanFeedbackMessage`,

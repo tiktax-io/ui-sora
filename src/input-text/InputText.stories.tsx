@@ -115,7 +115,7 @@ ReadOnly.args = {
 
 Disabled.args = {
   disabled: true,
-  label: 'Read only',
+  label: 'Disabled',
   placeholder: 'Custom placeholder',
   value: 'Can only be read'
 }

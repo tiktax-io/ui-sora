@@ -49,6 +49,8 @@ export const Minimal = Template.bind({})
 export const WithLabel = Template.bind({})
 export const Invalid = Template.bind({})
 export const WithSuccessFeedback = Template.bind({})
+export const ReadOnly = Template.bind({})
+export const Disabled = Template.bind({})
 
 const commonArgs = {
   onChange: () => console.log('key pressed'),
@@ -57,16 +59,16 @@ const commonArgs = {
 
 AllProps.args = {
   ...commonArgs,
+  disabled: false,
   feedbackMessage: 'Random message!',
   isInvalid: false,
   isValid: false,
   label: 'Password',
-  passwordIsHidden: true,
+  readOnly: false,
   value: 'MyPassword1234'
 }
 
 Unhidden.args = {
-  passwordIsHidden: false,
   value: 'MyPassword1234'
 }
 
@@ -91,4 +93,18 @@ WithSuccessFeedback.args = {
   isValid: true,
   feedbackMessage: 'Optional successful feedback',
   value: 'My custom input'
+}
+
+ReadOnly.args = {
+  label: 'Read only',
+  placeholder: 'Custom placeholder',
+  readOnly: true,
+  value: 'CanOnlyBeRead'
+}
+
+Disabled.args = {
+  disabled: true,
+  label: 'Disabled',
+  placeholder: 'Custom placeholder',
+  value: 'CanOnlyBeRead'
 }

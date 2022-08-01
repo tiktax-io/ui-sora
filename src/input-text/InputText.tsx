@@ -22,6 +22,7 @@ import { InputTextProps } from './InputText.types'
  * @param {onChange?: (value: string) => unknown} onChange function to trigger
  * when input value changes.
  * @param {string} placeholder string passed to HTML input placeholder.
+ * @param {boolean} readOnly HTML attribute of readonly input.
  * @param {string} value the string value of the input for controlled forms.
  * @param {number} width integer representing the width in pixels.
  * @returns {ReactElement} Div containing text input, optionally label above,

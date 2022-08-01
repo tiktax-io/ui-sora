@@ -154,4 +154,54 @@ describe('InputPassword component', () => {
     expect(element).toHaveDisplayValue('aa')
   }) */
 
+  test('Readonly input matches snapshot', () => {
+    const props = {
+      readOnly: true,
+      value: 'Can only be read'
+    }
+    const tree = renderer
+      .create(
+        <InputPassword {...props}/>
+      )
+      .toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+
+  test('\'readOnly\' attribute can be passed as prop from parent', () => {
+    const props = {
+      dataTestId: 'readOnly-props-works',
+      readOnly: true
+    }
+    render(
+      <InputPassword {...props}/>
+    )
+    const element = screen.getByTestId('readOnly-props-worksInput')
+    expect(element).toHaveAttribute('readonly')
+  })
+
+  test('Disabled input matches snapshot', () => {
+    const props = {
+      disabled: true,
+      value: 'Can only be read'
+    }
+    const tree = renderer
+      .create(
+        <InputPassword {...props}/>
+      )
+      .toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+
+  test('\'disabled\' attribute can be passed as prop from parent', () => {
+    const props = {
+      dataTestId: 'disabled-props-works',
+      disabled: true
+    }
+    render(
+      <InputPassword {...props}/>
+    )
+    const element = screen.getByTestId('disabled-props-worksInput')
+    expect(element).toHaveAttribute('disabled')
+  })
+
 })

@@ -41,5 +41,28 @@ export const inputGlobalStyles = {
       boxShadow: `0px 0px 4px 5px ${hexToRGB(primary, 0.15)}`,
       outline: 'none'
     }
+  },
+  inputElement: {
+    '&:disabled': {
+      background: shadeColor('#ffffff', 1.05),
+      border: '1px solid transparent',
+      boxShadow: 'none',
+      cursor: 'not-allowed',
+      '& span': {
+        color: shadeColor('#ffffff', 1.14)
+      },
+      '&:active': {
+        background: shadeColor('#ffffff', 1.05),
+        boxShadow: 'none'
+      },
+      '&:focus': {
+        background: shadeColor('#ffffff', 1.05),
+        boxShadow: 'none'
+      },
+      '&:hover': {
+        background: shadeColor('#ffffff', 1.05),
+        boxShadow: 'none'
+      }
+    }
   }
 }

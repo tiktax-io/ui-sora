@@ -1,5 +1,5 @@
 import { createUseStyles } from 'react-jss'
-import { black, danger, fontFamily, inputGlobalStyles, primary, success, typography_scale } from '../_styles'
+import { black, danger, fontFamily, inputGlobalStyles, primary, success, text, typography_scale } from '../_styles'
 import { hexToRGB, shadeColor } from '../_utils/colors'
 
 export const isInvalidStyle = {
@@ -10,6 +10,34 @@ export const isInvalidStyle = {
 export const isValidStyle = {
   border: `1px solid ${success}`,
   boxShadow: `0px 4px 10px 3px ${hexToRGB(success, 0.25)}`
+}
+
+export const readOnlyStyle = {
+  inputElement: {
+    color: shadeColor(text, 0.5)
+  }
+}
+
+export const disabledStyle = {
+  background: shadeColor('#ffffff', 1.05),
+  border: '1px solid transparent',
+  boxShadow: 'none',
+  cursor: 'not-allowed',
+  '& span': {
+    color: shadeColor('#ffffff', 1.14)
+  },
+  '&:active': {
+    background: shadeColor('#ffffff', 1.05),
+    boxShadow: 'none'
+  },
+  '&:focus': {
+    background: shadeColor('#ffffff', 1.05),
+    boxShadow: 'none'
+  },
+  '&:hover': {
+    background: shadeColor('#ffffff', 1.05),
+    boxShadow: 'none'
+  }
 }
 
 export const style = {
@@ -30,13 +58,14 @@ export const style = {
     letterSpacing: '0.23px'
   },
   inputElement: {
+    ...inputGlobalStyles.container,
     background: 'none',
     border: 'none',
     height: '100%',
     letterSpacing: '0.23px',
     paddingLeft: inputGlobalStyles.container.paddingLeft,
     width: '100%',
-    '&:focus': {
+    '&:focus-within': {
       outline: 'none'
     },
     '&::placeholder': {

@@ -5,7 +5,7 @@ import { CSSProperties } from 'react'
  * element.
  * @param {string} [dataTestId] id of the container element to be
  * used on tests as a way to query the component.
- * @param {boolean} disabled HTML attribute of disabled input.
+ * @param {boolean} [disabled] HTML attribute of disabled input.
  * @param {string} feedbackMessage validation message to display below the
  * input field.
  * @param {boolean} isInvalid true if the input will display an error status.
@@ -14,7 +14,7 @@ import { CSSProperties } from 'react'
  * @param {onChange?: (value: string) => unknown} onChange function to trigger
  * when input value changes.
  * @param {string} placeholder string used as placeholder for user instructions.
- * @param {boolean} readOnly
+ * @param {boolean} readOnly HTML attribute of readonly input.
  * @param {string} value the string value of the input for controlled forms.
  * @param {number} width integer representing the width in pixels.
  *****************************************************************************/
